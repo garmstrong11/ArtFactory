@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtFactory.Domain", "src\Ar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtFactory.Proofer.XmPie", "src\ArtFactory.Proofer.XmPie\ArtFactory.Proofer.XmPie.csproj", "{63FBCA4F-FB9B-45C0-8E35-58F47BEB0303}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtFactory.Tests", "test\ArtFactory.Tests\ArtFactory.Tests.csproj", "{6073E205-EF19-41AC-8F8D-8ECC1FF50C17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{63FBCA4F-FB9B-45C0-8E35-58F47BEB0303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63FBCA4F-FB9B-45C0-8E35-58F47BEB0303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63FBCA4F-FB9B-45C0-8E35-58F47BEB0303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6073E205-EF19-41AC-8F8D-8ECC1FF50C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6073E205-EF19-41AC-8F8D-8ECC1FF50C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6073E205-EF19-41AC-8F8D-8ECC1FF50C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6073E205-EF19-41AC-8F8D-8ECC1FF50C17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

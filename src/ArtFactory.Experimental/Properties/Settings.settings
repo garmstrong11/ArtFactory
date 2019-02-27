@@ -3,13 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="ArtFactory_Experimental_JobTicket_JobTicket_SSP" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://uprodtest/xmpiewsapi/JobTicket_SSP.asmx</Value>
+      <Value Profile="(Default)">http://uimeapp0003/xmpiewsapi/JobTicket_SSP.asmx</Value>
     </Setting>
     <Setting Name="ArtFactory_Experimental_Production_Production_SSP" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://uprodtest/xmpiewsapi/Production_SSP.asmx</Value>
+      <Value Profile="(Default)">http://uimeapp0003/xmpiewsapi/Production_SSP.asmx</Value>
     </Setting>
     <Setting Name="ArtFactory_Experimental_Job_Job_SSP" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://uprodtest/xmpiewsapi/Job_SSP.asmx</Value>
+      <Value Profile="(Default)">http://uimeapp0003/xmpiewsapi/Job_SSP.asmx</Value>
+    </Setting>
+    <Setting Name="artifact_OrderProductWS_OrderProductWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://uimeapp0003/uStoreWSAPI/OrderProductWS.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

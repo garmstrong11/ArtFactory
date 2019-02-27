@@ -34,9 +34,14 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Polly, Version=7.0.0.0, Culture=neutral, PublicKeyToken=c8a3ffc3f8f825cc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Polly.7.0.3\lib\netstandard2.0\Polly.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,161 +51,314 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NewTicketProofer.cs" />
+    <Compile Include="BossUser.cs" />
+    <Compile Include="Connected Services\JobTicket\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Job\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Production\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Jobber.cs" />
+    <Compile Include="JobExecutionContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Web References\JobService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\JobTicketService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\ProductionService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://uprodtest/xmpiewsapi/JobTicket_SSP.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\JobTicketService\</RelPath>
-      <UpdateFromURL>http://uprodtest/xmpiewsapi/JobTicket_SSP.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>ArtFactory_Proofer_XmPie_JobTicketService_JobTicket_SSP</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://uprodtest/xmpiewsapi/Job_SSP.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\JobService\</RelPath>
-      <UpdateFromURL>http://uprodtest/xmpiewsapi/Job_SSP.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>ArtFactory_Proofer_XmPie_JobService_Job_SSP</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://uprodtest/xmpiewsapi/Production_SSP.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\ProductionService\</RelPath>
-      <UpdateFromURL>http://uprodtest/xmpiewsapi/Production_SSP.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>ArtFactory_Proofer_XmPie_ProductionService_Production_SSP</CachedSettingsPropName>
-    </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.AddImpositionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.AddJDFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.AddTrackingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.AssetSourceInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.AssetSourceStruct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.Connection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.Customization.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.EmailBodyInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.EmailHeaderInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.EmailProviderInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.ERecipientIDListMergeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.FieldMappings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetAllMetaDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetAssetSourcesExResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetAssetSourcesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetCustomizationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetImpositionParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetJDFParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetJobParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetMetaDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetOutputParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetSchemasDataSourcesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.GetTrackingParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.Parameter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.Property.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.RecipientsInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetAssetSourcesExResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetAssetSourcesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetCustomizationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetDataSourcesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetImpositionParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetJDFParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetJobParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetMetaDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetOutputInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetOutputParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetRIsByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetRIsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SetTrackingParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\ArtFactory.Proofer.XmPie.JobTicket.SubJobInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JobTicket\JobTicket_SSP.wsdl" />
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.AddFilesToOutputResultsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.AddFileToOutputResultsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.CampaignShortcutInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.GetAllPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.GetOutputResultBinaryFileStreamChunkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.GetOutputResultBinaryFileStreamResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.GetOutputResultsInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.GetPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.OutputResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.Property.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.ReQueueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.SetProgressStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.SetPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\ArtFactory.Proofer.XmPie.Job.XMPTblDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Job\Job_SSP.wsdl" />
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.OnDemandOutputResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.SubmitJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Production\Production.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\JobService\CampaignShortcutInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobService\Job_SSP.wsdl" />
-    <None Include="Web References\JobService\OutputResult.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobService\Property.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobService\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\JobService\XMPTblDataSet.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\AssetSourceInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\AssetSourceStruct.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\Connection.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\Customization.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\EmailBodyInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\EmailHeaderInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\EmailProviderInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\ERecipientIDListMergeType.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\FieldMappings.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\JobTicket_SSP.wsdl" />
-    <None Include="Web References\JobTicketService\Parameter.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\Property.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\RecipientsInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\JobTicketService\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\JobTicketService\SubJobInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\ProductionService\OnDemandOutputResult.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\ProductionService\Production_SSP.wsdl" />
-    <None Include="Web References\ProductionService\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\JobService\Job_SSP.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\JobTicketService\JobTicket_SSP.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\ProductionService\Production_SSP.disco" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ArtFactory.Domain\ArtFactory.Domain.csproj">
       <Project>{9ebbd636-83f9-4565-91b6-7dbf071f0e94}</Project>
       <Name>ArtFactory.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\JobTicket\" />
+    <WCFMetadataStorage Include="Connected Services\Job\" />
+    <WCFMetadataStorage Include="Connected Services\Production\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JobTicket\JobTicket_SSP.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JobTicket\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JobTicket\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JobTicket\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Job\Job_SSP.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Job\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Job\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Job\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Production\Production.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Production\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Production\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Production\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

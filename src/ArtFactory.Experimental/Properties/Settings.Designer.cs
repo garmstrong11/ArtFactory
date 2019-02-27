@@ -26,7 +26,7 @@ namespace ArtFactory.Experimental.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://uprodtest/xmpiewsapi/JobTicket_SSP.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://uimeapp0003/xmpiewsapi/JobTicket_SSP.asmx")]
         public string ArtFactory_Experimental_JobTicket_JobTicket_SSP {
             get {
                 return ((string)(this["ArtFactory_Experimental_JobTicket_JobTicket_SSP"]));
@@ -36,7 +36,7 @@ namespace ArtFactory.Experimental.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://uprodtest/xmpiewsapi/Production_SSP.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://uimeapp0003/xmpiewsapi/Production_SSP.asmx")]
         public string ArtFactory_Experimental_Production_Production_SSP {
             get {
                 return ((string)(this["ArtFactory_Experimental_Production_Production_SSP"]));
@@ -46,10 +46,20 @@ namespace ArtFactory.Experimental.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://uprodtest/xmpiewsapi/Job_SSP.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://uimeapp0003/xmpiewsapi/Job_SSP.asmx")]
         public string ArtFactory_Experimental_Job_Job_SSP {
             get {
                 return ((string)(this["ArtFactory_Experimental_Job_Job_SSP"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://uimeapp0003/uStoreWSAPI/OrderProductWS.asmx")]
+        public string artifact_OrderProductWS_OrderProductWS {
+            get {
+                return ((string)(this["artifact_OrderProductWS_OrderProductWS"]));
             }
         }
     }

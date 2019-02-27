@@ -1,0 +1,1270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="uStoreWSAPI" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="uStoreWSAPI/AbstractTypes" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="uStoreWSAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="uStoreWSAPI">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetOrderProductList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isReturnDrafts" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderProductListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderProductListResult" type="tns:ArrayOfOrderProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrderProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderProduct" nillable="true" type="tns:OrderProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderProduct">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ReturnObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="OrderProductID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QuantityPerRecipient" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumRecipients" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalQuantity" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProductUnitPrice" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="PricePerRecipient" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProductPriceSubtotal" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalPrice" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecipientListID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecipientDataSourceID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecipientFilterID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecipientDataSourceTableID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDraft" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsSavedDraft" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExtraParamsXml" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DateAdded" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderQueueID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="UproduceJobID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="StatusID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecipientListModelID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocumentXml" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AggregationCriteria" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="JobGroupID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocAggregationCriteria" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FlatCsvxFilePath" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="UproduceHandlingFlatJobID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeliveryMethod" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeliveryServiceID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeliveryPrice" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="ParentOrderProductID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Cost" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="CircleInfo" type="tns:CircleProjectOrderProductDetails" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ReturnObject" abstract="true" />
+      <s:complexType name="CircleProjectOrderProductDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CircleProjectID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CircleFamilyID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CircleTouchPointID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOrderProductListByQueue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="queueId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderProductListByQueueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderProductListByQueueResult" type="tns:ArrayOfOrderProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderProductHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="storeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderProductHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderProductHistoryResult" type="tns:ArrayOfOrderProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderProductResult" type="tns:OrderProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProofList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProofListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProofListResult" type="tns:ArrayOfProof" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProof">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Proof" nillable="true" type="tns:Proof" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Proof">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ReturnObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ProofID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderProductID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProofDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="UProduceProofJobID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsProofSuccessful" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecipientCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsProofSeen" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileExtension" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetDraftOrderProductList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="storeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDraftOrderProductListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDraftOrderProductListResult" type="tns:ArrayOfOrderProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOrderProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOrderProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RecalculatePrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecalculatePriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecalculatePriceResult" type="tns:OrderProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQuantityPerRecipeint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderProductId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantityPerRecipient" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQuantityPerRecipeintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateQuantityPerRecipeintResult" type="tns:OrderProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompositeSubOrderProductsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompositeSubOrderProductsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompositeSubOrderProductsListResult" type="tns:ArrayOfOrderProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileSubmissionDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subOrderProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileSubmissionDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileSubmissionDocumentResult" type="tns:FileSubmissionDocument" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FileSubmissionDocument">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SubOrderProductID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentPages" type="tns:ArrayOfDocumentPage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocumentPage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentPage" nillable="true" type="tns:DocumentPage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocumentPage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ColorTypeID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRotated" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Reorder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReorderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReorderResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isSuccessful" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveToQueue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderProductId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="queueId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveToQueueResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListOrderProductJobStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderProductIds" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListOrderProductJobStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListOrderProductJobStatusResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOrderProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOrderProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateOrderProductResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrderProductToCart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderProductId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrderProductToCartResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DecryptOrderProductId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="encryptedOrderProductId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DecryptOrderProductIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DecryptOrderProductIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfOrderProduct" nillable="true" type="tns:ArrayOfOrderProduct" />
+      <s:element name="OrderProduct" nillable="true" type="tns:OrderProduct" />
+      <s:element name="ArrayOfProof" nillable="true" type="tns:ArrayOfProof" />
+      <s:element name="FileSubmissionDocument" nillable="true" type="tns:FileSubmissionDocument" />
+      <s:element name="ArrayOfInt" nillable="true" type="tns:ArrayOfInt" />
+      <s:element name="int" type="s:int" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+    <s:schema targetNamespace="uStoreWSAPI/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetOrderProductListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderProductList" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductListByQueueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderProductListByQueue" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductListByQueueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderProductListByQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderProductHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderProductHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProofListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProofList" />
+  </wsdl:message>
+  <wsdl:message name="GetProofListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProofListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftOrderProductListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDraftOrderProductList" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftOrderProductListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDraftOrderProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOrderProductSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOrderProductSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOrderProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecalculatePriceSoapIn">
+    <wsdl:part name="parameters" element="tns:RecalculatePrice" />
+  </wsdl:message>
+  <wsdl:message name="RecalculatePriceSoapOut">
+    <wsdl:part name="parameters" element="tns:RecalculatePriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityPerRecipeintSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateQuantityPerRecipeint" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityPerRecipeintSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateQuantityPerRecipeintResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompositeSubOrderProductsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompositeSubOrderProductsList" />
+  </wsdl:message>
+  <wsdl:message name="GetCompositeSubOrderProductsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompositeSubOrderProductsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSubmissionDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileSubmissionDocument" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSubmissionDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileSubmissionDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReorderSoapIn">
+    <wsdl:part name="parameters" element="tns:Reorder" />
+  </wsdl:message>
+  <wsdl:message name="ReorderSoapOut">
+    <wsdl:part name="parameters" element="tns:ReorderResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveToQueueSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveToQueue" />
+  </wsdl:message>
+  <wsdl:message name="MoveToQueueSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveToQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListOrderProductJobStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ListOrderProductJobStatus" />
+  </wsdl:message>
+  <wsdl:message name="ListOrderProductJobStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ListOrderProductJobStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderProductSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderProductSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOrderProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderProductToCartSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrderProductToCart" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderProductToCartSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrderProductToCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="DecryptOrderProductIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DecryptOrderProductId" />
+  </wsdl:message>
+  <wsdl:message name="DecryptOrderProductIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DecryptOrderProductIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductListHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="isReturnDrafts" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfOrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductListByQueueHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="queueId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductListByQueueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfOrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductHistoryHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="storeId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductHistoryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfOrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderProductId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProductHttpGetOut">
+    <wsdl:part name="Body" element="tns:OrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetProofListHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderProductId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProofListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProof" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftOrderProductListHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="storeId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftOrderProductListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfOrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOrderProductHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderProductId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOrderProductHttpGetOut" />
+  <wsdl:message name="RecalculatePriceHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderProductId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecalculatePriceHttpGetOut">
+    <wsdl:part name="Body" element="tns:OrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityPerRecipeintHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderProductId" type="s:string" />
+    <wsdl:part name="quantityPerRecipient" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityPerRecipeintHttpGetOut">
+    <wsdl:part name="Body" element="tns:OrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetCompositeSubOrderProductsListHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderProductId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompositeSubOrderProductsListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfOrderProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSubmissionDocumentHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="subOrderProductId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSubmissionDocumentHttpGetOut">
+    <wsdl:part name="Body" element="tns:FileSubmissionDocument" />
+  </wsdl:message>
+  <wsdl:message name="MoveToQueueHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderProductId" type="s:string" />
+    <wsdl:part name="queueId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MoveToQueueHttpGetOut" />
+  <wsdl:message name="ListOrderProductJobStatusHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderProductIds" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="ListOrderProductJobStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderProductHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="productId" type="s:string" />
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderProductHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderProductToCartHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="orderProductId" type="s:string" />
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderProductToCartHttpGetOut" />
+  <wsdl:message name="DecryptOrderProductIdHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="encryptedOrderProductId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptOrderProductIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:portType name="OrderProductWSSoap">
+    <wsdl:operation name="GetOrderProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Order Products for the given order.</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProductListSoapIn" />
+      <wsdl:output message="tns:GetOrderProductListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductListByQueue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all the Order Products that are in the given queue.</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProductListByQueueSoapIn" />
+      <wsdl:output message="tns:GetOrderProductListByQueueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the data of the order products which were checked out by the given user in the given store</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProductHistorySoapIn" />
+      <wsdl:output message="tns:GetOrderProductHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the data of the given Order Product.</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProductSoapIn" />
+      <wsdl:output message="tns:GetOrderProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProofList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all the Proof jobs that were made for the given Order Product.</wsdl:documentation>
+      <wsdl:input message="tns:GetProofListSoapIn" />
+      <wsdl:output message="tns:GetProofListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftOrderProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the latest drafts made by the given user in the given store.</wsdl:documentation>
+      <wsdl:input message="tns:GetDraftOrderProductListSoapIn" />
+      <wsdl:output message="tns:GetDraftOrderProductListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">eletes the given order product</wsdl:documentation>
+      <wsdl:input message="tns:DeleteOrderProductSoapIn" />
+      <wsdl:output message="tns:DeleteOrderProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecalculatePrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method recalculates the prices of the given order product</wsdl:documentation>
+      <wsdl:input message="tns:RecalculatePriceSoapIn" />
+      <wsdl:output message="tns:RecalculatePriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityPerRecipeint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method updates the quantity per recipient and recalculates prices</wsdl:documentation>
+      <wsdl:input message="tns:UpdateQuantityPerRecipeintSoapIn" />
+      <wsdl:output message="tns:UpdateQuantityPerRecipeintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompositeSubOrderProductsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Sub Order Products of an order product of type 'composite'</wsdl:documentation>
+      <wsdl:input message="tns:GetCompositeSubOrderProductsListSoapIn" />
+      <wsdl:output message="tns:GetCompositeSubOrderProductsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSubmissionDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the File Submission document of the component Order Product.</wsdl:documentation>
+      <wsdl:input message="tns:GetFileSubmissionDocumentSoapIn" />
+      <wsdl:output message="tns:GetFileSubmissionDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reorder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reorders the given order product and place it in the cart</wsdl:documentation>
+      <wsdl:input message="tns:ReorderSoapIn" />
+      <wsdl:output message="tns:ReorderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveToQueue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Move the given order product to the given queue and invokes the relevant trigger.</wsdl:documentation>
+      <wsdl:input message="tns:MoveToQueueSoapIn" />
+      <wsdl:output message="tns:MoveToQueueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOrderProductJobStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Checks the production job status of each given order product</wsdl:documentation>
+      <wsdl:input message="tns:ListOrderProductJobStatusSoapIn" />
+      <wsdl:output message="tns:ListOrderProductJobStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates an order product for the given product and given cart.</wsdl:documentation>
+      <wsdl:input message="tns:CreateOrderProductSoapIn" />
+      <wsdl:output message="tns:CreateOrderProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderProductToCart">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds an order product to the cart</wsdl:documentation>
+      <wsdl:input message="tns:AddOrderProductToCartSoapIn" />
+      <wsdl:output message="tns:AddOrderProductToCartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DecryptOrderProductId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Decrypts a cipher data string that holds an encrypted order product ID.</wsdl:documentation>
+      <wsdl:input message="tns:DecryptOrderProductIdSoapIn" />
+      <wsdl:output message="tns:DecryptOrderProductIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OrderProductWSHttpGet">
+    <wsdl:operation name="GetOrderProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Order Products for the given order.</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProductListHttpGetIn" />
+      <wsdl:output message="tns:GetOrderProductListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductListByQueue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all the Order Products that are in the given queue.</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProductListByQueueHttpGetIn" />
+      <wsdl:output message="tns:GetOrderProductListByQueueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the data of the order products which were checked out by the given user in the given store</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProductHistoryHttpGetIn" />
+      <wsdl:output message="tns:GetOrderProductHistoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the data of the given Order Product.</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProductHttpGetIn" />
+      <wsdl:output message="tns:GetOrderProductHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProofList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all the Proof jobs that were made for the given Order Product.</wsdl:documentation>
+      <wsdl:input message="tns:GetProofListHttpGetIn" />
+      <wsdl:output message="tns:GetProofListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftOrderProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the latest drafts made by the given user in the given store.</wsdl:documentation>
+      <wsdl:input message="tns:GetDraftOrderProductListHttpGetIn" />
+      <wsdl:output message="tns:GetDraftOrderProductListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">eletes the given order product</wsdl:documentation>
+      <wsdl:input message="tns:DeleteOrderProductHttpGetIn" />
+      <wsdl:output message="tns:DeleteOrderProductHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecalculatePrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method recalculates the prices of the given order product</wsdl:documentation>
+      <wsdl:input message="tns:RecalculatePriceHttpGetIn" />
+      <wsdl:output message="tns:RecalculatePriceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityPerRecipeint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method updates the quantity per recipient and recalculates prices</wsdl:documentation>
+      <wsdl:input message="tns:UpdateQuantityPerRecipeintHttpGetIn" />
+      <wsdl:output message="tns:UpdateQuantityPerRecipeintHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompositeSubOrderProductsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Sub Order Products of an order product of type 'composite'</wsdl:documentation>
+      <wsdl:input message="tns:GetCompositeSubOrderProductsListHttpGetIn" />
+      <wsdl:output message="tns:GetCompositeSubOrderProductsListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSubmissionDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the File Submission document of the component Order Product.</wsdl:documentation>
+      <wsdl:input message="tns:GetFileSubmissionDocumentHttpGetIn" />
+      <wsdl:output message="tns:GetFileSubmissionDocumentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveToQueue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Move the given order product to the given queue and invokes the relevant trigger.</wsdl:documentation>
+      <wsdl:input message="tns:MoveToQueueHttpGetIn" />
+      <wsdl:output message="tns:MoveToQueueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOrderProductJobStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Checks the production job status of each given order product</wsdl:documentation>
+      <wsdl:input message="tns:ListOrderProductJobStatusHttpGetIn" />
+      <wsdl:output message="tns:ListOrderProductJobStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates an order product for the given product and given cart.</wsdl:documentation>
+      <wsdl:input message="tns:CreateOrderProductHttpGetIn" />
+      <wsdl:output message="tns:CreateOrderProductHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderProductToCart">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds an order product to the cart</wsdl:documentation>
+      <wsdl:input message="tns:AddOrderProductToCartHttpGetIn" />
+      <wsdl:output message="tns:AddOrderProductToCartHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DecryptOrderProductId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Decrypts a cipher data string that holds an encrypted order product ID.</wsdl:documentation>
+      <wsdl:input message="tns:DecryptOrderProductIdHttpGetIn" />
+      <wsdl:output message="tns:DecryptOrderProductIdHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderProductWSSoap" type="tns:OrderProductWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOrderProductList">
+      <soap:operation soapAction="uStoreWSAPI/GetOrderProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductListByQueue">
+      <soap:operation soapAction="uStoreWSAPI/GetOrderProductListByQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductHistory">
+      <soap:operation soapAction="uStoreWSAPI/GetOrderProductHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProduct">
+      <soap:operation soapAction="uStoreWSAPI/GetOrderProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProofList">
+      <soap:operation soapAction="uStoreWSAPI/GetProofList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftOrderProductList">
+      <soap:operation soapAction="uStoreWSAPI/GetDraftOrderProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderProduct">
+      <soap:operation soapAction="uStoreWSAPI/DeleteOrderProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecalculatePrice">
+      <soap:operation soapAction="uStoreWSAPI/RecalculatePrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityPerRecipeint">
+      <soap:operation soapAction="uStoreWSAPI/UpdateQuantityPerRecipeint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompositeSubOrderProductsList">
+      <soap:operation soapAction="uStoreWSAPI/GetCompositeSubOrderProductsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSubmissionDocument">
+      <soap:operation soapAction="uStoreWSAPI/GetFileSubmissionDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reorder">
+      <soap:operation soapAction="uStoreWSAPI/Reorder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveToQueue">
+      <soap:operation soapAction="uStoreWSAPI/MoveToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListOrderProductJobStatus">
+      <soap:operation soapAction="uStoreWSAPI/ListOrderProductJobStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderProduct">
+      <soap:operation soapAction="uStoreWSAPI/CreateOrderProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderProductToCart">
+      <soap:operation soapAction="uStoreWSAPI/AddOrderProductToCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecryptOrderProductId">
+      <soap:operation soapAction="uStoreWSAPI/DecryptOrderProductId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderProductWSSoap12" type="tns:OrderProductWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOrderProductList">
+      <soap12:operation soapAction="uStoreWSAPI/GetOrderProductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductListByQueue">
+      <soap12:operation soapAction="uStoreWSAPI/GetOrderProductListByQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductHistory">
+      <soap12:operation soapAction="uStoreWSAPI/GetOrderProductHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProduct">
+      <soap12:operation soapAction="uStoreWSAPI/GetOrderProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProofList">
+      <soap12:operation soapAction="uStoreWSAPI/GetProofList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftOrderProductList">
+      <soap12:operation soapAction="uStoreWSAPI/GetDraftOrderProductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderProduct">
+      <soap12:operation soapAction="uStoreWSAPI/DeleteOrderProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecalculatePrice">
+      <soap12:operation soapAction="uStoreWSAPI/RecalculatePrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityPerRecipeint">
+      <soap12:operation soapAction="uStoreWSAPI/UpdateQuantityPerRecipeint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompositeSubOrderProductsList">
+      <soap12:operation soapAction="uStoreWSAPI/GetCompositeSubOrderProductsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSubmissionDocument">
+      <soap12:operation soapAction="uStoreWSAPI/GetFileSubmissionDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reorder">
+      <soap12:operation soapAction="uStoreWSAPI/Reorder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveToQueue">
+      <soap12:operation soapAction="uStoreWSAPI/MoveToQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListOrderProductJobStatus">
+      <soap12:operation soapAction="uStoreWSAPI/ListOrderProductJobStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderProduct">
+      <soap12:operation soapAction="uStoreWSAPI/CreateOrderProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderProductToCart">
+      <soap12:operation soapAction="uStoreWSAPI/AddOrderProductToCart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecryptOrderProductId">
+      <soap12:operation soapAction="uStoreWSAPI/DecryptOrderProductId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderProductWSHttpGet" type="tns:OrderProductWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetOrderProductList">
+      <http:operation location="/GetOrderProductList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductListByQueue">
+      <http:operation location="/GetOrderProductListByQueue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProductHistory">
+      <http:operation location="/GetOrderProductHistory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProduct">
+      <http:operation location="/GetOrderProduct" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProofList">
+      <http:operation location="/GetProofList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftOrderProductList">
+      <http:operation location="/GetDraftOrderProductList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderProduct">
+      <http:operation location="/DeleteOrderProduct" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RecalculatePrice">
+      <http:operation location="/RecalculatePrice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityPerRecipeint">
+      <http:operation location="/UpdateQuantityPerRecipeint" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompositeSubOrderProductsList">
+      <http:operation location="/GetCompositeSubOrderProductsList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSubmissionDocument">
+      <http:operation location="/GetFileSubmissionDocument" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveToQueue">
+      <http:operation location="/MoveToQueue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ListOrderProductJobStatus">
+      <http:operation location="/ListOrderProductJobStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderProduct">
+      <http:operation location="/CreateOrderProduct" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderProductToCart">
+      <http:operation location="/AddOrderProductToCart" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DecryptOrderProductId">
+      <http:operation location="/DecryptOrderProductId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderProductWS">
+    <wsdl:port name="OrderProductWSSoap" binding="tns:OrderProductWSSoap">
+      <soap:address location="http://uimeapp0003/uStoreWSAPI/OrderProductWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrderProductWSSoap12" binding="tns:OrderProductWSSoap12">
+      <soap12:address location="http://uimeapp0003/uStoreWSAPI/OrderProductWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrderProductWSHttpGet" binding="tns:OrderProductWSHttpGet">
+      <http:address location="http://uimeapp0003/uStoreWSAPI/OrderProductWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

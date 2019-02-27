@@ -1,15 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ArtFactory.Proofer.XmPie.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="ArtFactory_Proofer_XmPie_JobService_Job_SSP" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://uprodtest/xmpiewsapi/Job_SSP.asmx</Value>
-    </Setting>
-    <Setting Name="ArtFactory_Proofer_XmPie_JobTicketService_JobTicket_SSP" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://uprodtest/xmpiewsapi/JobTicket_SSP.asmx</Value>
-    </Setting>
-    <Setting Name="ArtFactory_Proofer_XmPie_ProductionService_Production_SSP" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://uprodtest/xmpiewsapi/Production_SSP.asmx</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>

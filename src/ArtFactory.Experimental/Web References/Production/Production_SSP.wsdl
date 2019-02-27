@@ -780,10 +780,10 @@
   <wsdl:service name="Production_SSP">
     <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Production Web Service.</wsdl:documentation>
     <wsdl:port name="Production_SSPSoap" binding="tns:Production_SSPSoap">
-      <soap:address location="http://uprodtest/xmpiewsapi/Production_SSP.asmx" />
+      <soap:address location="http://uimeapp0003/xmpiewsapi/Production_SSP.asmx" />
     </wsdl:port>
     <wsdl:port name="Production_SSPSoap12" binding="tns:Production_SSPSoap12">
-      <soap12:address location="http://uprodtest/xmpiewsapi/Production_SSP.asmx" />
+      <soap12:address location="http://uimeapp0003/xmpiewsapi/Production_SSP.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

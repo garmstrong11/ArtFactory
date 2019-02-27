@@ -22,35 +22,5 @@ namespace ArtFactory.Proofer.XmPie.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://uprodtest/xmpiewsapi/Job_SSP.asmx")]
-        public string ArtFactory_Proofer_XmPie_JobService_Job_SSP {
-            get {
-                return ((string)(this["ArtFactory_Proofer_XmPie_JobService_Job_SSP"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://uprodtest/xmpiewsapi/JobTicket_SSP.asmx")]
-        public string ArtFactory_Proofer_XmPie_JobTicketService_JobTicket_SSP {
-            get {
-                return ((string)(this["ArtFactory_Proofer_XmPie_JobTicketService_JobTicket_SSP"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://uprodtest/xmpiewsapi/Production_SSP.asmx")]
-        public string ArtFactory_Proofer_XmPie_ProductionService_Production_SSP {
-            get {
-                return ((string)(this["ArtFactory_Proofer_XmPie_ProductionService_Production_SSP"]));
-            }
-        }
     }
 }
