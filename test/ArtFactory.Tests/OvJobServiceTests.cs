@@ -11,7 +11,7 @@
   using NUnit.Framework;
 
   [TestFixture]
-  public class JobberTests
+  public class OvJobServiceTests
   {
     private string U { get; set; }
     private string P { get; set; }
@@ -37,7 +37,7 @@
         .Then
         .Returns(3);
       
-      var jobber = new Jobber(svc, usr);
+      var jobber = new OvJobService(svc, usr);
       var result = jobber.PollForStatus(J, TimeSpan.FromMilliseconds(500));
       A.CallTo(() => svc.GetStatus(U,P,J))
         .MustHaveHappened(17, Times.Exactly);
@@ -45,7 +45,7 @@
       var answer = Task.Run(() =>
       {
         var kronk = jobber.PollForStatus(J, TimeSpan.FromMilliseconds(500));
-        return (JobStatus) kronk;
+        return kronk;
       });
 
       answer.Result.Should().Be(JobStatus.Completed);

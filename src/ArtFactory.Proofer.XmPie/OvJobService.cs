@@ -10,12 +10,19 @@
   /// <summary>
   /// A wrapper over the XMPie uProduce WSAPI Job_SSP WebService.
   /// </summary>
-  public class Jobber
+  public class OvJobService
   {
+    /// <summary>
+    /// The XMPie WSAPI service implementation.
+    /// </summary>
     private Job_SSPSoap JobSvc { get; }
+
+    /// <summary>
+    /// A user with production privileges on uProduce
+    /// </summary>
     private IXmPieUser User { get; }
 
-    public Jobber(Job_SSPSoap jobSvc, IXmPieUser user)
+    public OvJobService(Job_SSPSoap jobSvc, IXmPieUser user)
     {
       JobSvc = jobSvc;
       User = user;
