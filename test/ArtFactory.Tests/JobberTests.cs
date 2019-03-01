@@ -1,6 +1,7 @@
 ﻿namespace ArtFactory.Tests
 {
   using System;
+  using System.ServiceModel;
   using System.Threading.Tasks;
   using ArtFactory.Domain;
   using ArtFactory.Proofer.XmPie;
@@ -12,23 +13,42 @@
   [TestFixture]
   public class JobberTests
   {
-    [Test]
-    public void CanInstantiateJobber()
+    private string U { get; set; }
+    private string P { get; set; }
+    private string J { get; set; }
+
+    [OneTimeSetUp]
+    public void OneTime()
     {
-      var svc
-      var usr = A.Fake<IXmPieUser>();
-      A.CallTo(() => usr.UserName).Returns("garmstrong");
-      A.CallTo(() => usr.Password).Returns("9ol8ikm");
+      U = "garmstrong";
+      P = "9ol8ikm";
+      J = "46583";
+    }
 
-      //var svc = A.Fake<Job_SSPSoap>();
-      //A.CallTo(() => svc.GetStatusAsync(A<string>._, A<string>._, A<string>._))
-      //  .Returns(Task.FromResult(2))
-      //  .NumberOfTimes(3)
-      //  .Then
-      //  .Returns(3);
+    [Test]
+    public void PollForStatus_ThreeCallsBeforeCompletion_Completes()
+    {
+      var usr = new BossUser(U, P);
 
+      var svc = A.Fake<Job_SSPSoap>();
+      A.CallTo(() => svc.GetStatus(U, P, J))
+        .Returns(2)
+        .NumberOfTimes(3)
+        .Then
+        .Returns(3);
+      
       var jobber = new Jobber(svc, usr);
-      var result = jobber.MonitorJobCompletion("32141", TimeSpan.FromMilliseconds(500));
+      var result = jobber.PollForStatus(J, TimeSpan.FromMilliseconds(500));
+      A.CallTo(() => svc.GetStatus(U,P,J))
+        .MustHaveHappened(17, Times.Exactly);
+
+      var answer = Task.Run(() =>
+      {
+        var kronk = jobber.PollForStatus(J, TimeSpan.FromMilliseconds(500));
+        return (JobStatus) kronk;
+      });
+
+      answer.Result.Should().Be(JobStatus.Completed);
       result.Should().Be(JobStatus.Completed);
     }
   }
