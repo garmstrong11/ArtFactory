@@ -11,5 +11,10 @@
     /// The password for the uProduce user under whose authority services will run.
     /// </summary>
     string UproduceUserPassword { get; }
+
+    /// <summary>
+    /// The UNC name of the Uproduce server
+    /// </summary>
+    string UproduceServerUncName { get; }
   }
 }

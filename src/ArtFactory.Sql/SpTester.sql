@@ -1,0 +1,3 @@
+USE XMPDB2
+
+EXEC XMPie.SP_DocumentGet 151

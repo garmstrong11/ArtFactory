@@ -3,10 +3,14 @@
   <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Production Web Service.</wsdl:documentation>
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="XMPieWSAPI">
-      <s:element name="SubmitJobs">
+      <s:element name="SubmitJob">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobTicket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPriority" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inTouchPointID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inProps" type="tns:ArrayOfProperty" />
           </s:sequence>
         </s:complexType>
@@ -22,6 +26,23 @@
           <s:element minOccurs="0" maxOccurs="1" name="m_Value" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="SubmitJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitJobResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitJobs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inJobTicket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inProps" type="tns:ArrayOfProperty" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SubmitJobsResponse">
         <s:complexType>
           <s:sequence>
@@ -34,37 +55,11 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="XMPUser" type="tns:XMPUser" />
-      <s:complexType name="XMPUser">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CallerID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="DateFormatString" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="ForceUTCDate" type="s:boolean" />
-        </s:sequence>
-        <s:anyAttribute />
-      </s:complexType>
-      <s:element name="SubmitJob">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="inJobTicket" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="inPriority" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="inTouchPointID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="inProps" type="tns:ArrayOfProperty" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SubmitJobResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SubmitJobResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="SubmitSplittedJob">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobTicket" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inSplittingType" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inSplittingInfo" type="s:string" />
@@ -84,6 +79,8 @@
       <s:element name="SubmitJobWithParallelProcessing">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobTicket" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inSplittingType" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inSplittingInfo" type="s:string" />
@@ -103,6 +100,8 @@
       <s:element name="DeployHTMLDocumentJob">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobTicket" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inTouchPointID" type="s:string" />
           </s:sequence>
@@ -118,6 +117,8 @@
       <s:element name="UnDeployHTMLDocumentJob">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobID" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -132,6 +133,8 @@
       <s:element name="MergeCSVXFiles">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inCSVXFilePaths" type="tns:ArrayOfString" />
             <s:element minOccurs="0" maxOccurs="1" name="inOutputCSVXPath" type="s:string" />
           </s:sequence>
@@ -147,6 +150,8 @@
       <s:element name="AppendCSVXFile">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inMainCSVXFilePath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inSecondaryCSVXFilePath" type="s:string" />
           </s:sequence>
@@ -162,6 +167,8 @@
       <s:element name="DeployOnDemandJob">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobTicket" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inProps" type="tns:ArrayOfProperty" />
           </s:sequence>
@@ -177,6 +184,8 @@
       <s:element name="UndeployOnDemandJob">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobID" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -191,6 +200,8 @@
       <s:element name="SuspendOnDemandJob">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobID" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -205,6 +216,8 @@
       <s:element name="ResumeOnDemandJob">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobID" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -219,6 +232,8 @@
       <s:element name="RedeployOnDemandJob">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inJobTicket" type="s:string" />
           </s:sequence>
@@ -234,6 +249,8 @@
       <s:element name="CreateOnDemandOutput">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inProps" type="tns:ArrayOfProperty" />
           </s:sequence>
         </s:complexType>
@@ -248,6 +265,8 @@
       <s:element name="GetOnDemandOutput">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inRequestID" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -271,6 +290,8 @@
       <s:element name="DeleteOnDemandOutput">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="inRequestID" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -284,23 +305,17 @@
       </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="SubmitJobsSoapIn">
-    <wsdl:part name="parameters" element="tns:SubmitJobs" />
-  </wsdl:message>
-  <wsdl:message name="SubmitJobsSoapOut">
-    <wsdl:part name="parameters" element="tns:SubmitJobsResponse" />
-  </wsdl:message>
-  <wsdl:message name="SubmitJobsXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
-  </wsdl:message>
   <wsdl:message name="SubmitJobSoapIn">
     <wsdl:part name="parameters" element="tns:SubmitJob" />
   </wsdl:message>
   <wsdl:message name="SubmitJobSoapOut">
     <wsdl:part name="parameters" element="tns:SubmitJobResponse" />
   </wsdl:message>
-  <wsdl:message name="SubmitJobXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
+  <wsdl:message name="SubmitJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitJobs" />
+  </wsdl:message>
+  <wsdl:message name="SubmitJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitJobsResponse" />
   </wsdl:message>
   <wsdl:message name="SubmitSplittedJobSoapIn">
     <wsdl:part name="parameters" element="tns:SubmitSplittedJob" />
@@ -308,17 +323,11 @@
   <wsdl:message name="SubmitSplittedJobSoapOut">
     <wsdl:part name="parameters" element="tns:SubmitSplittedJobResponse" />
   </wsdl:message>
-  <wsdl:message name="SubmitSplittedJobXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
-  </wsdl:message>
   <wsdl:message name="SubmitJobWithParallelProcessingSoapIn">
     <wsdl:part name="parameters" element="tns:SubmitJobWithParallelProcessing" />
   </wsdl:message>
   <wsdl:message name="SubmitJobWithParallelProcessingSoapOut">
     <wsdl:part name="parameters" element="tns:SubmitJobWithParallelProcessingResponse" />
-  </wsdl:message>
-  <wsdl:message name="SubmitJobWithParallelProcessingXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
   </wsdl:message>
   <wsdl:message name="DeployHTMLDocumentJobSoapIn">
     <wsdl:part name="parameters" element="tns:DeployHTMLDocumentJob" />
@@ -326,17 +335,11 @@
   <wsdl:message name="DeployHTMLDocumentJobSoapOut">
     <wsdl:part name="parameters" element="tns:DeployHTMLDocumentJobResponse" />
   </wsdl:message>
-  <wsdl:message name="DeployHTMLDocumentJobXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
-  </wsdl:message>
   <wsdl:message name="UnDeployHTMLDocumentJobSoapIn">
     <wsdl:part name="parameters" element="tns:UnDeployHTMLDocumentJob" />
   </wsdl:message>
   <wsdl:message name="UnDeployHTMLDocumentJobSoapOut">
     <wsdl:part name="parameters" element="tns:UnDeployHTMLDocumentJobResponse" />
-  </wsdl:message>
-  <wsdl:message name="UnDeployHTMLDocumentJobXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
   </wsdl:message>
   <wsdl:message name="MergeCSVXFilesSoapIn">
     <wsdl:part name="parameters" element="tns:MergeCSVXFiles" />
@@ -344,17 +347,11 @@
   <wsdl:message name="MergeCSVXFilesSoapOut">
     <wsdl:part name="parameters" element="tns:MergeCSVXFilesResponse" />
   </wsdl:message>
-  <wsdl:message name="MergeCSVXFilesXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
-  </wsdl:message>
   <wsdl:message name="AppendCSVXFileSoapIn">
     <wsdl:part name="parameters" element="tns:AppendCSVXFile" />
   </wsdl:message>
   <wsdl:message name="AppendCSVXFileSoapOut">
     <wsdl:part name="parameters" element="tns:AppendCSVXFileResponse" />
-  </wsdl:message>
-  <wsdl:message name="AppendCSVXFileXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
   </wsdl:message>
   <wsdl:message name="DeployOnDemandJobSoapIn">
     <wsdl:part name="parameters" element="tns:DeployOnDemandJob" />
@@ -362,17 +359,11 @@
   <wsdl:message name="DeployOnDemandJobSoapOut">
     <wsdl:part name="parameters" element="tns:DeployOnDemandJobResponse" />
   </wsdl:message>
-  <wsdl:message name="DeployOnDemandJobXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
-  </wsdl:message>
   <wsdl:message name="UndeployOnDemandJobSoapIn">
     <wsdl:part name="parameters" element="tns:UndeployOnDemandJob" />
   </wsdl:message>
   <wsdl:message name="UndeployOnDemandJobSoapOut">
     <wsdl:part name="parameters" element="tns:UndeployOnDemandJobResponse" />
-  </wsdl:message>
-  <wsdl:message name="UndeployOnDemandJobXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
   </wsdl:message>
   <wsdl:message name="SuspendOnDemandJobSoapIn">
     <wsdl:part name="parameters" element="tns:SuspendOnDemandJob" />
@@ -380,17 +371,11 @@
   <wsdl:message name="SuspendOnDemandJobSoapOut">
     <wsdl:part name="parameters" element="tns:SuspendOnDemandJobResponse" />
   </wsdl:message>
-  <wsdl:message name="SuspendOnDemandJobXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
-  </wsdl:message>
   <wsdl:message name="ResumeOnDemandJobSoapIn">
     <wsdl:part name="parameters" element="tns:ResumeOnDemandJob" />
   </wsdl:message>
   <wsdl:message name="ResumeOnDemandJobSoapOut">
     <wsdl:part name="parameters" element="tns:ResumeOnDemandJobResponse" />
-  </wsdl:message>
-  <wsdl:message name="ResumeOnDemandJobXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
   </wsdl:message>
   <wsdl:message name="RedeployOnDemandJobSoapIn">
     <wsdl:part name="parameters" element="tns:RedeployOnDemandJob" />
@@ -398,17 +383,11 @@
   <wsdl:message name="RedeployOnDemandJobSoapOut">
     <wsdl:part name="parameters" element="tns:RedeployOnDemandJobResponse" />
   </wsdl:message>
-  <wsdl:message name="RedeployOnDemandJobXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
-  </wsdl:message>
   <wsdl:message name="CreateOnDemandOutputSoapIn">
     <wsdl:part name="parameters" element="tns:CreateOnDemandOutput" />
   </wsdl:message>
   <wsdl:message name="CreateOnDemandOutputSoapOut">
     <wsdl:part name="parameters" element="tns:CreateOnDemandOutputResponse" />
-  </wsdl:message>
-  <wsdl:message name="CreateOnDemandOutputXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
   </wsdl:message>
   <wsdl:message name="GetOnDemandOutputSoapIn">
     <wsdl:part name="parameters" element="tns:GetOnDemandOutput" />
@@ -416,36 +395,30 @@
   <wsdl:message name="GetOnDemandOutputSoapOut">
     <wsdl:part name="parameters" element="tns:GetOnDemandOutputResponse" />
   </wsdl:message>
-  <wsdl:message name="GetOnDemandOutputXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
-  </wsdl:message>
   <wsdl:message name="DeleteOnDemandOutputSoapIn">
     <wsdl:part name="parameters" element="tns:DeleteOnDemandOutput" />
   </wsdl:message>
   <wsdl:message name="DeleteOnDemandOutputSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteOnDemandOutputResponse" />
   </wsdl:message>
-  <wsdl:message name="DeleteOnDemandOutputXMPUser">
-    <wsdl:part name="XMPUser" element="tns:XMPUser" />
-  </wsdl:message>
-  <wsdl:portType name="ProductionSoap">
+  <wsdl:portType name="Production_SSPSoap">
+    <wsdl:operation name="SubmitJob">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submit Job.</wsdl:documentation>
+      <wsdl:input message="tns:SubmitJobSoapIn" />
+      <wsdl:output message="tns:SubmitJobSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SubmitJobs">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submit Jobs.</wsdl:documentation>
       <wsdl:input message="tns:SubmitJobsSoapIn" />
       <wsdl:output message="tns:SubmitJobsSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="SubmitJob">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is obsolete, please use SubmitJobs instead</wsdl:documentation>
-      <wsdl:input message="tns:SubmitJobSoapIn" />
-      <wsdl:output message="tns:SubmitJobSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="SubmitSplittedJob">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is obsolete, please use SubmitJobs instead</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submit splitted Job.</wsdl:documentation>
       <wsdl:input message="tns:SubmitSplittedJobSoapIn" />
       <wsdl:output message="tns:SubmitSplittedJobSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SubmitJobWithParallelProcessing">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is obsolete, please use SubmitJobs instead</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submit parallel processing job.</wsdl:documentation>
       <wsdl:input message="tns:SubmitJobWithParallelProcessingSoapIn" />
       <wsdl:output message="tns:SubmitJobWithParallelProcessingSoapOut" />
     </wsdl:operation>
@@ -510,23 +483,21 @@
       <wsdl:output message="tns:DeleteOnDemandOutputSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="ProductionSoap" type="tns:ProductionSoap">
+  <wsdl:binding name="Production_SSPSoap" type="tns:Production_SSPSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="SubmitJobs">
-      <soap:operation soapAction="XMPieWSAPI/SubmitJobs" style="document" />
+    <wsdl:operation name="SubmitJob">
+      <soap:operation soapAction="XMPieWSAPI/SubmitJob" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:SubmitJobsXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SubmitJob">
-      <soap:operation soapAction="XMPieWSAPI/SubmitJob" style="document" />
+    <wsdl:operation name="SubmitJobs">
+      <soap:operation soapAction="XMPieWSAPI/SubmitJobs" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:SubmitJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -536,7 +507,6 @@
       <soap:operation soapAction="XMPieWSAPI/SubmitSplittedJob" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:SubmitSplittedJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -546,7 +516,6 @@
       <soap:operation soapAction="XMPieWSAPI/SubmitJobWithParallelProcessing" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:SubmitJobWithParallelProcessingXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -556,7 +525,6 @@
       <soap:operation soapAction="XMPieWSAPI/DeployHTMLDocumentJob" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:DeployHTMLDocumentJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -566,7 +534,6 @@
       <soap:operation soapAction="XMPieWSAPI/UnDeployHTMLDocumentJob" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:UnDeployHTMLDocumentJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -576,7 +543,6 @@
       <soap:operation soapAction="XMPieWSAPI/MergeCSVXFiles" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:MergeCSVXFilesXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -586,7 +552,6 @@
       <soap:operation soapAction="XMPieWSAPI/AppendCSVXFile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:AppendCSVXFileXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -596,7 +561,6 @@
       <soap:operation soapAction="XMPieWSAPI/DeployOnDemandJob" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:DeployOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -606,7 +570,6 @@
       <soap:operation soapAction="XMPieWSAPI/UndeployOnDemandJob" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:UndeployOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -616,7 +579,6 @@
       <soap:operation soapAction="XMPieWSAPI/SuspendOnDemandJob" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:SuspendOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -626,7 +588,6 @@
       <soap:operation soapAction="XMPieWSAPI/ResumeOnDemandJob" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:ResumeOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -636,7 +597,6 @@
       <soap:operation soapAction="XMPieWSAPI/RedeployOnDemandJob" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:RedeployOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -646,7 +606,6 @@
       <soap:operation soapAction="XMPieWSAPI/CreateOnDemandOutput" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:CreateOnDemandOutputXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -656,7 +615,6 @@
       <soap:operation soapAction="XMPieWSAPI/GetOnDemandOutput" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:GetOnDemandOutputXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -666,30 +624,27 @@
       <soap:operation soapAction="XMPieWSAPI/DeleteOnDemandOutput" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
-        <soap:header message="tns:DeleteOnDemandOutputXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="ProductionSoap12" type="tns:ProductionSoap">
+  <wsdl:binding name="Production_SSPSoap12" type="tns:Production_SSPSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="SubmitJobs">
-      <soap12:operation soapAction="XMPieWSAPI/SubmitJobs" style="document" />
+    <wsdl:operation name="SubmitJob">
+      <soap12:operation soapAction="XMPieWSAPI/SubmitJob" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:SubmitJobsXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SubmitJob">
-      <soap12:operation soapAction="XMPieWSAPI/SubmitJob" style="document" />
+    <wsdl:operation name="SubmitJobs">
+      <soap12:operation soapAction="XMPieWSAPI/SubmitJobs" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:SubmitJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -699,7 +654,6 @@
       <soap12:operation soapAction="XMPieWSAPI/SubmitSplittedJob" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:SubmitSplittedJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -709,7 +663,6 @@
       <soap12:operation soapAction="XMPieWSAPI/SubmitJobWithParallelProcessing" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:SubmitJobWithParallelProcessingXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -719,7 +672,6 @@
       <soap12:operation soapAction="XMPieWSAPI/DeployHTMLDocumentJob" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:DeployHTMLDocumentJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -729,7 +681,6 @@
       <soap12:operation soapAction="XMPieWSAPI/UnDeployHTMLDocumentJob" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:UnDeployHTMLDocumentJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -739,7 +690,6 @@
       <soap12:operation soapAction="XMPieWSAPI/MergeCSVXFiles" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:MergeCSVXFilesXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -749,7 +699,6 @@
       <soap12:operation soapAction="XMPieWSAPI/AppendCSVXFile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:AppendCSVXFileXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -759,7 +708,6 @@
       <soap12:operation soapAction="XMPieWSAPI/DeployOnDemandJob" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:DeployOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -769,7 +717,6 @@
       <soap12:operation soapAction="XMPieWSAPI/UndeployOnDemandJob" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:UndeployOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -779,7 +726,6 @@
       <soap12:operation soapAction="XMPieWSAPI/SuspendOnDemandJob" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:SuspendOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -789,7 +735,6 @@
       <soap12:operation soapAction="XMPieWSAPI/ResumeOnDemandJob" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:ResumeOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -799,7 +744,6 @@
       <soap12:operation soapAction="XMPieWSAPI/RedeployOnDemandJob" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:RedeployOnDemandJobXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -809,7 +753,6 @@
       <soap12:operation soapAction="XMPieWSAPI/CreateOnDemandOutput" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:CreateOnDemandOutputXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -819,7 +762,6 @@
       <soap12:operation soapAction="XMPieWSAPI/GetOnDemandOutput" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:GetOnDemandOutputXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
@@ -829,20 +771,19 @@
       <soap12:operation soapAction="XMPieWSAPI/DeleteOnDemandOutput" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
-        <soap12:header message="tns:DeleteOnDemandOutputXMPUser" part="XMPUser" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="Production">
+  <wsdl:service name="Production_SSP">
     <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Production Web Service.</wsdl:documentation>
-    <wsdl:port name="ProductionSoap" binding="tns:ProductionSoap">
-      <soap:address location="http://uimeapp0003/xmpiewsapi/Production.asmx" />
+    <wsdl:port name="Production_SSPSoap" binding="tns:Production_SSPSoap">
+      <soap:address location="http://uimeapp0003/xmpiewsapi/Production_SSP.asmx" />
     </wsdl:port>
-    <wsdl:port name="ProductionSoap12" binding="tns:ProductionSoap12">
-      <soap12:address location="http://uimeapp0003/xmpiewsapi/Production.asmx" />
+    <wsdl:port name="Production_SSPSoap12" binding="tns:Production_SSPSoap12">
+      <soap12:address location="http://uimeapp0003/xmpiewsapi/Production_SSP.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

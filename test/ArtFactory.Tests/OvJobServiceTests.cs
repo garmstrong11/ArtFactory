@@ -51,5 +51,21 @@
       answer.Result.Should().Be(JobStatus.Completed);
       result.Should().Be(JobStatus.Completed);
     }
+
+    [Test]
+    public async Task GetJobResultUrl_CanReturnJobUrl()
+    {
+      var client = new Job_SSPSoapClient(
+        new BasicHttpBinding(),
+        new EndpointAddress("http://uimeapp0003/xmpiewsapi/Job_SSP.asmx")
+      );
+
+      var doc = await client.GetOutputResultsInfoAsync(U, P, J);
+
+      doc.GetOutputResultsInfoResult[0]
+        .m_FileName
+        .Should()
+        .Be("L5 Lock Tag_46583_r00001_p001.jpg");
+    }
   }
 }

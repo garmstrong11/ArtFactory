@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://uimeapp0003/xmpiewsapi/Production.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://uimeapp0003/xmpiewsapi/Production_SSP.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Production.disco" MetadataType="Disco" ID="598f23bc-1f52-4239-8084-3765ba8f38b5" SourceId="1" SourceUrl="http://uimeapp0003/xmpiewsapi/Production.asmx?disco" />
-    <MetadataFile FileName="Production.wsdl" MetadataType="Wsdl" ID="c140061f-bb81-43ad-b69d-3f26b4929906" SourceId="1" SourceUrl="http://uimeapp0003/xmpiewsapi/Production.asmx?wsdl" />
+    <MetadataFile FileName="Production_SSP.disco" MetadataType="Disco" ID="a7c460d4-5f5e-4ddb-af23-52f6f3091fd7" SourceId="1" SourceUrl="http://uimeapp0003/xmpiewsapi/Production_SSP.asmx?disco" />
+    <MetadataFile FileName="Production_SSP.wsdl" MetadataType="Wsdl" ID="4f24af0a-5351-49da-b375-df4f3445c16c" SourceId="1" SourceUrl="http://uimeapp0003/xmpiewsapi/Production_SSP.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

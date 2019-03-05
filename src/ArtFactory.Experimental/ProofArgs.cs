@@ -4,7 +4,7 @@
   using System.Linq;
   using ArtFactory.Experimental.JobTicket;
 
-  public class ProofArgs
+  public class ProofArgs : IProofArgs
   {
     private static List<string> NonStringFieldNames { get; }
 

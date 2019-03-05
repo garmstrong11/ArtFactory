@@ -9,447 +9,349 @@
 //------------------------------------------------------------------------------
 
 namespace ArtFactory.Proofer.XmPie.Production {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Property", Namespace="XMPieWSAPI")]
+    [System.SerializableAttribute()]
+    public partial class Property : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string m_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string m_ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string m_Name {
+            get {
+                return this.m_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.m_NameField, value) != true)) {
+                    this.m_NameField = value;
+                    this.RaisePropertyChanged("m_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string m_Value {
+            get {
+                return this.m_ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.m_ValueField, value) != true)) {
+                    this.m_ValueField = value;
+                    this.RaisePropertyChanged("m_Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="XMPieWSAPI", ItemName="string")]
+    [System.SerializableAttribute()]
+    public class ArrayOfString : System.Collections.Generic.List<string> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnDemandOutputResult", Namespace="XMPieWSAPI")]
+    [System.SerializableAttribute()]
+    public partial class OnDemandOutputResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int m_StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string m_MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string m_FileNameField;
+        
+        private long m_FileSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string m_FileTokenField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int m_Status {
+            get {
+                return this.m_StatusField;
+            }
+            set {
+                if ((this.m_StatusField.Equals(value) != true)) {
+                    this.m_StatusField = value;
+                    this.RaisePropertyChanged("m_Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string m_Message {
+            get {
+                return this.m_MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.m_MessageField, value) != true)) {
+                    this.m_MessageField = value;
+                    this.RaisePropertyChanged("m_Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string m_FileName {
+            get {
+                return this.m_FileNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.m_FileNameField, value) != true)) {
+                    this.m_FileNameField = value;
+                    this.RaisePropertyChanged("m_FileName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public long m_FileSize {
+            get {
+                return this.m_FileSizeField;
+            }
+            set {
+                if ((this.m_FileSizeField.Equals(value) != true)) {
+                    this.m_FileSizeField = value;
+                    this.RaisePropertyChanged("m_FileSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string m_FileToken {
+            get {
+                return this.m_FileTokenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.m_FileTokenField, value) != true)) {
+                    this.m_FileTokenField = value;
+                    this.RaisePropertyChanged("m_FileToken");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="XMPieWSAPI", ConfigurationName="Production.ProductionSoap")]
-    public interface ProductionSoap {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="XMPieWSAPI", ConfigurationName="Production.Production_SSPSoap")]
+    public interface Production_SSPSoap {
         
-        // CODEGEN: Generating message contract since message SubmitJobsRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitJobs", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse SubmitJobs(ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitJobs", ReplyAction="*")]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse> SubmitJobsAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest request);
-        
-        // CODEGEN: Generating message contract since message SubmitJobRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitJob", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.SubmitJobResponse SubmitJob(ArtFactory.Proofer.XmPie.Production.SubmitJobRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitJob", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobResponse> SubmitJobAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobRequest request);
         
-        // CODEGEN: Generating message contract since message SubmitSplittedJobRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitJobs", ReplyAction="*")]
+        ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse SubmitJobs(ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitJobs", ReplyAction="*")]
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse> SubmitJobsAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest request);
+        
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitSplittedJob", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse SubmitSplittedJob(ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitSplittedJob", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse> SubmitSplittedJobAsync(ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest request);
         
-        // CODEGEN: Generating message contract since message SubmitJobWithParallelProcessingRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitJobWithParallelProcessing", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse SubmitJobWithParallelProcessing(ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SubmitJobWithParallelProcessing", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse> SubmitJobWithParallelProcessingAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest request);
         
-        // CODEGEN: Generating message contract since message DeployHTMLDocumentJobRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/DeployHTMLDocumentJob", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse DeployHTMLDocumentJob(ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/DeployHTMLDocumentJob", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse> DeployHTMLDocumentJobAsync(ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest request);
         
-        // CODEGEN: Generating message contract since message UnDeployHTMLDocumentJobRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/UnDeployHTMLDocumentJob", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse UnDeployHTMLDocumentJob(ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/UnDeployHTMLDocumentJob", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse> UnDeployHTMLDocumentJobAsync(ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest request);
         
-        // CODEGEN: Generating message contract since message MergeCSVXFilesRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/MergeCSVXFiles", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse MergeCSVXFiles(ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/MergeCSVXFiles", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse> MergeCSVXFilesAsync(ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest request);
         
-        // CODEGEN: Generating message contract since message AppendCSVXFileRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/AppendCSVXFile", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse AppendCSVXFile(ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/AppendCSVXFile", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse> AppendCSVXFileAsync(ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest request);
         
-        // CODEGEN: Generating message contract since message DeployOnDemandJobRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/DeployOnDemandJob", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse DeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/DeployOnDemandJob", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse> DeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest request);
         
-        // CODEGEN: Generating message contract since message UndeployOnDemandJobRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/UndeployOnDemandJob", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse UndeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/UndeployOnDemandJob", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse> UndeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest request);
         
-        // CODEGEN: Generating message contract since message SuspendOnDemandJobRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SuspendOnDemandJob", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse SuspendOnDemandJob(ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/SuspendOnDemandJob", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse> SuspendOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest request);
         
-        // CODEGEN: Generating message contract since message ResumeOnDemandJobRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/ResumeOnDemandJob", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse ResumeOnDemandJob(ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/ResumeOnDemandJob", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse> ResumeOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest request);
         
-        // CODEGEN: Generating message contract since message RedeployOnDemandJobRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/RedeployOnDemandJob", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse RedeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/RedeployOnDemandJob", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse> RedeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest request);
         
-        // CODEGEN: Generating message contract since message CreateOnDemandOutputRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/CreateOnDemandOutput", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse CreateOnDemandOutput(ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/CreateOnDemandOutput", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse> CreateOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest request);
         
-        // CODEGEN: Generating message contract since message GetOnDemandOutputRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/GetOnDemandOutput", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse GetOnDemandOutput(ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/GetOnDemandOutput", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse> GetOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest request);
         
-        // CODEGEN: Generating message contract since message DeleteOnDemandOutputRequest has headers
+        // CODEGEN: Generating message contract since element name inUsername from namespace XMPieWSAPI is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/DeleteOnDemandOutput", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse DeleteOnDemandOutput(ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="XMPieWSAPI/DeleteOnDemandOutput", ReplyAction="*")]
         System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse> DeleteOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest request);
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="XMPieWSAPI")]
-    public partial class XMPUser : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string usernameField;
-        
-        private string passwordField;
-        
-        private string callerIDField;
-        
-        private string dateFormatStringField;
-        
-        private bool forceUTCDateField;
-        
-        private System.Xml.XmlAttribute[] anyAttrField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Username {
-            get {
-                return this.usernameField;
-            }
-            set {
-                this.usernameField = value;
-                this.RaisePropertyChanged("Username");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Password {
-            get {
-                return this.passwordField;
-            }
-            set {
-                this.passwordField = value;
-                this.RaisePropertyChanged("Password");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string CallerID {
-            get {
-                return this.callerIDField;
-            }
-            set {
-                this.callerIDField = value;
-                this.RaisePropertyChanged("CallerID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string DateFormatString {
-            get {
-                return this.dateFormatStringField;
-            }
-            set {
-                this.dateFormatStringField = value;
-                this.RaisePropertyChanged("DateFormatString");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public bool ForceUTCDate {
-            get {
-                return this.forceUTCDateField;
-            }
-            set {
-                this.forceUTCDateField = value;
-                this.RaisePropertyChanged("ForceUTCDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyAttributeAttribute()]
-        public System.Xml.XmlAttribute[] AnyAttr {
-            get {
-                return this.anyAttrField;
-            }
-            set {
-                this.anyAttrField = value;
-                this.RaisePropertyChanged("AnyAttr");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="XMPieWSAPI")]
-    public partial class OnDemandOutputResult : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int m_StatusField;
-        
-        private string m_MessageField;
-        
-        private string m_FileNameField;
-        
-        private long m_FileSizeField;
-        
-        private string m_FileTokenField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int m_Status {
-            get {
-                return this.m_StatusField;
-            }
-            set {
-                this.m_StatusField = value;
-                this.RaisePropertyChanged("m_Status");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string m_Message {
-            get {
-                return this.m_MessageField;
-            }
-            set {
-                this.m_MessageField = value;
-                this.RaisePropertyChanged("m_Message");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string m_FileName {
-            get {
-                return this.m_FileNameField;
-            }
-            set {
-                this.m_FileNameField = value;
-                this.RaisePropertyChanged("m_FileName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public long m_FileSize {
-            get {
-                return this.m_FileSizeField;
-            }
-            set {
-                this.m_FileSizeField = value;
-                this.RaisePropertyChanged("m_FileSize");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string m_FileToken {
-            get {
-                return this.m_FileTokenField;
-            }
-            set {
-                this.m_FileTokenField = value;
-                this.RaisePropertyChanged("m_FileToken");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="XMPieWSAPI")]
-    public partial class Property : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string m_NameField;
-        
-        private string m_ValueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string m_Name {
-            get {
-                return this.m_NameField;
-            }
-            set {
-                this.m_NameField = value;
-                this.RaisePropertyChanged("m_Name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string m_Value {
-            get {
-                return this.m_ValueField;
-            }
-            set {
-                this.m_ValueField = value;
-                this.RaisePropertyChanged("m_Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SubmitJobs", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
-    public partial class SubmitJobsRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobTicket;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=1)]
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
-        
-        public SubmitJobsRequest() {
-        }
-        
-        public SubmitJobsRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
-            this.XMPUser = XMPUser;
-            this.inJobTicket = inJobTicket;
-            this.inProps = inProps;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SubmitJobsResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
-    public partial class SubmitJobsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string[] SubmitJobsResult;
-        
-        public SubmitJobsResponse() {
-        }
-        
-        public SubmitJobsResponse(string[] SubmitJobsResult) {
-            this.SubmitJobsResult = SubmitJobsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SubmitJob", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SubmitJobRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobTicket;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=1)]
-        public string inPriority;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=2)]
-        public string inTouchPointID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=3)]
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitJob", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SubmitJobRequestBody Body;
         
         public SubmitJobRequest() {
         }
         
-        public SubmitJobRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
-            this.XMPUser = XMPUser;
+        public SubmitJobRequest(ArtFactory.Proofer.XmPie.Production.SubmitJobRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SubmitJobRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobTicket;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string inPriority;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string inTouchPointID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        
+        public SubmitJobRequestBody() {
+        }
+        
+        public SubmitJobRequestBody(string inUsername, string inPassword, string inJobTicket, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobTicket = inJobTicket;
             this.inPriority = inPriority;
             this.inTouchPointID = inTouchPointID;
@@ -460,16 +362,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SubmitJobResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SubmitJobResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string SubmitJobResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitJobResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SubmitJobResponseBody Body;
         
         public SubmitJobResponse() {
         }
         
-        public SubmitJobResponse(string SubmitJobResult) {
+        public SubmitJobResponse(ArtFactory.Proofer.XmPie.Production.SubmitJobResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SubmitJobResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string SubmitJobResult;
+        
+        public SubmitJobResponseBody() {
+        }
+        
+        public SubmitJobResponseBody(string SubmitJobResult) {
             this.SubmitJobResult = SubmitJobResult;
         }
     }
@@ -477,36 +396,136 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SubmitSplittedJob", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
-    public partial class SubmitSplittedJobRequest {
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SubmitJobsRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitJobs", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SubmitJobsRequestBody Body;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
+        public SubmitJobsRequest() {
+        }
+        
+        public SubmitJobsRequest(ArtFactory.Proofer.XmPie.Production.SubmitJobsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SubmitJobsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string inJobTicket;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=1)]
-        public string inSplittingType;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=2)]
-        public string inSplittingInfo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=3)]
-        public string inPriority;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=4)]
-        public string inTouchPointID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=5)]
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        
+        public SubmitJobsRequestBody() {
+        }
+        
+        public SubmitJobsRequestBody(string inUsername, string inPassword, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
+            this.inJobTicket = inJobTicket;
+            this.inProps = inProps;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SubmitJobsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitJobsResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SubmitJobsResponseBody Body;
+        
+        public SubmitJobsResponse() {
+        }
+        
+        public SubmitJobsResponse(ArtFactory.Proofer.XmPie.Production.SubmitJobsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SubmitJobsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.ArrayOfString SubmitJobsResult;
+        
+        public SubmitJobsResponseBody() {
+        }
+        
+        public SubmitJobsResponseBody(ArtFactory.Proofer.XmPie.Production.ArrayOfString SubmitJobsResult) {
+            this.SubmitJobsResult = SubmitJobsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SubmitSplittedJobRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitSplittedJob", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequestBody Body;
         
         public SubmitSplittedJobRequest() {
         }
         
-        public SubmitSplittedJobRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
-            this.XMPUser = XMPUser;
+        public SubmitSplittedJobRequest(ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SubmitSplittedJobRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobTicket;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string inSplittingType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string inSplittingInfo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string inPriority;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string inTouchPointID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        
+        public SubmitSplittedJobRequestBody() {
+        }
+        
+        public SubmitSplittedJobRequestBody(string inUsername, string inPassword, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobTicket = inJobTicket;
             this.inSplittingType = inSplittingType;
             this.inSplittingInfo = inSplittingInfo;
@@ -519,16 +538,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SubmitSplittedJobResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SubmitSplittedJobResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string[] SubmitSplittedJobResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitSplittedJobResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponseBody Body;
         
         public SubmitSplittedJobResponse() {
         }
         
-        public SubmitSplittedJobResponse(string[] SubmitSplittedJobResult) {
+        public SubmitSplittedJobResponse(ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SubmitSplittedJobResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.ArrayOfString SubmitSplittedJobResult;
+        
+        public SubmitSplittedJobResponseBody() {
+        }
+        
+        public SubmitSplittedJobResponseBody(ArtFactory.Proofer.XmPie.Production.ArrayOfString SubmitSplittedJobResult) {
             this.SubmitSplittedJobResult = SubmitSplittedJobResult;
         }
     }
@@ -536,36 +572,56 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SubmitJobWithParallelProcessing", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SubmitJobWithParallelProcessingRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobTicket;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=1)]
-        public string inSplittingType;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=2)]
-        public string inSplittingInfo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=3)]
-        public string inPriority;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=4)]
-        public string inTouchPointID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=5)]
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitJobWithParallelProcessing", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequestBody Body;
         
         public SubmitJobWithParallelProcessingRequest() {
         }
         
-        public SubmitJobWithParallelProcessingRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
-            this.XMPUser = XMPUser;
+        public SubmitJobWithParallelProcessingRequest(ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SubmitJobWithParallelProcessingRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobTicket;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string inSplittingType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string inSplittingInfo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string inPriority;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string inTouchPointID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        
+        public SubmitJobWithParallelProcessingRequestBody() {
+        }
+        
+        public SubmitJobWithParallelProcessingRequestBody(string inUsername, string inPassword, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobTicket = inJobTicket;
             this.inSplittingType = inSplittingType;
             this.inSplittingInfo = inSplittingInfo;
@@ -578,16 +634,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SubmitJobWithParallelProcessingResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SubmitJobWithParallelProcessingResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string SubmitJobWithParallelProcessingResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitJobWithParallelProcessingResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponseBody Body;
         
         public SubmitJobWithParallelProcessingResponse() {
         }
         
-        public SubmitJobWithParallelProcessingResponse(string SubmitJobWithParallelProcessingResult) {
+        public SubmitJobWithParallelProcessingResponse(ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SubmitJobWithParallelProcessingResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string SubmitJobWithParallelProcessingResult;
+        
+        public SubmitJobWithParallelProcessingResponseBody() {
+        }
+        
+        public SubmitJobWithParallelProcessingResponseBody(string SubmitJobWithParallelProcessingResult) {
             this.SubmitJobWithParallelProcessingResult = SubmitJobWithParallelProcessingResult;
         }
     }
@@ -595,23 +668,44 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeployHTMLDocumentJob", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeployHTMLDocumentJobRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobTicket;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=1)]
-        public string inTouchPointID;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeployHTMLDocumentJob", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequestBody Body;
         
         public DeployHTMLDocumentJobRequest() {
         }
         
-        public DeployHTMLDocumentJobRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inTouchPointID) {
-            this.XMPUser = XMPUser;
+        public DeployHTMLDocumentJobRequest(ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class DeployHTMLDocumentJobRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobTicket;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string inTouchPointID;
+        
+        public DeployHTMLDocumentJobRequestBody() {
+        }
+        
+        public DeployHTMLDocumentJobRequestBody(string inUsername, string inPassword, string inJobTicket, string inTouchPointID) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobTicket = inJobTicket;
             this.inTouchPointID = inTouchPointID;
         }
@@ -620,16 +714,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeployHTMLDocumentJobResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeployHTMLDocumentJobResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string DeployHTMLDocumentJobResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeployHTMLDocumentJobResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponseBody Body;
         
         public DeployHTMLDocumentJobResponse() {
         }
         
-        public DeployHTMLDocumentJobResponse(string DeployHTMLDocumentJobResult) {
+        public DeployHTMLDocumentJobResponse(ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class DeployHTMLDocumentJobResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string DeployHTMLDocumentJobResult;
+        
+        public DeployHTMLDocumentJobResponseBody() {
+        }
+        
+        public DeployHTMLDocumentJobResponseBody(string DeployHTMLDocumentJobResult) {
             this.DeployHTMLDocumentJobResult = DeployHTMLDocumentJobResult;
         }
     }
@@ -637,20 +748,41 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UnDeployHTMLDocumentJob", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UnDeployHTMLDocumentJobRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobID;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UnDeployHTMLDocumentJob", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequestBody Body;
         
         public UnDeployHTMLDocumentJobRequest() {
         }
         
-        public UnDeployHTMLDocumentJobRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
-            this.XMPUser = XMPUser;
+        public UnDeployHTMLDocumentJobRequest(ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class UnDeployHTMLDocumentJobRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobID;
+        
+        public UnDeployHTMLDocumentJobRequestBody() {
+        }
+        
+        public UnDeployHTMLDocumentJobRequestBody(string inUsername, string inPassword, string inJobID) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobID = inJobID;
         }
     }
@@ -658,16 +790,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UnDeployHTMLDocumentJobResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UnDeployHTMLDocumentJobResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public bool UnDeployHTMLDocumentJobResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UnDeployHTMLDocumentJobResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponseBody Body;
         
         public UnDeployHTMLDocumentJobResponse() {
         }
         
-        public UnDeployHTMLDocumentJobResponse(bool UnDeployHTMLDocumentJobResult) {
+        public UnDeployHTMLDocumentJobResponse(ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class UnDeployHTMLDocumentJobResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool UnDeployHTMLDocumentJobResult;
+        
+        public UnDeployHTMLDocumentJobResponseBody() {
+        }
+        
+        public UnDeployHTMLDocumentJobResponseBody(bool UnDeployHTMLDocumentJobResult) {
             this.UnDeployHTMLDocumentJobResult = UnDeployHTMLDocumentJobResult;
         }
     }
@@ -675,23 +824,44 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="MergeCSVXFiles", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class MergeCSVXFilesRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string[] inCSVXFilePaths;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=1)]
-        public string inOutputCSVXPath;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MergeCSVXFiles", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequestBody Body;
         
         public MergeCSVXFilesRequest() {
         }
         
-        public MergeCSVXFilesRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string[] inCSVXFilePaths, string inOutputCSVXPath) {
-            this.XMPUser = XMPUser;
+        public MergeCSVXFilesRequest(ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class MergeCSVXFilesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public ArtFactory.Proofer.XmPie.Production.ArrayOfString inCSVXFilePaths;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string inOutputCSVXPath;
+        
+        public MergeCSVXFilesRequestBody() {
+        }
+        
+        public MergeCSVXFilesRequestBody(string inUsername, string inPassword, ArtFactory.Proofer.XmPie.Production.ArrayOfString inCSVXFilePaths, string inOutputCSVXPath) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inCSVXFilePaths = inCSVXFilePaths;
             this.inOutputCSVXPath = inOutputCSVXPath;
         }
@@ -700,16 +870,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="MergeCSVXFilesResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class MergeCSVXFilesResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public bool MergeCSVXFilesResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MergeCSVXFilesResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponseBody Body;
         
         public MergeCSVXFilesResponse() {
         }
         
-        public MergeCSVXFilesResponse(bool MergeCSVXFilesResult) {
+        public MergeCSVXFilesResponse(ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class MergeCSVXFilesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool MergeCSVXFilesResult;
+        
+        public MergeCSVXFilesResponseBody() {
+        }
+        
+        public MergeCSVXFilesResponseBody(bool MergeCSVXFilesResult) {
             this.MergeCSVXFilesResult = MergeCSVXFilesResult;
         }
     }
@@ -717,23 +904,44 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AppendCSVXFile", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AppendCSVXFileRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inMainCSVXFilePath;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=1)]
-        public string inSecondaryCSVXFilePath;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AppendCSVXFile", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequestBody Body;
         
         public AppendCSVXFileRequest() {
         }
         
-        public AppendCSVXFileRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inMainCSVXFilePath, string inSecondaryCSVXFilePath) {
-            this.XMPUser = XMPUser;
+        public AppendCSVXFileRequest(ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class AppendCSVXFileRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inMainCSVXFilePath;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string inSecondaryCSVXFilePath;
+        
+        public AppendCSVXFileRequestBody() {
+        }
+        
+        public AppendCSVXFileRequestBody(string inUsername, string inPassword, string inMainCSVXFilePath, string inSecondaryCSVXFilePath) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inMainCSVXFilePath = inMainCSVXFilePath;
             this.inSecondaryCSVXFilePath = inSecondaryCSVXFilePath;
         }
@@ -742,16 +950,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AppendCSVXFileResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AppendCSVXFileResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public bool AppendCSVXFileResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AppendCSVXFileResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponseBody Body;
         
         public AppendCSVXFileResponse() {
         }
         
-        public AppendCSVXFileResponse(bool AppendCSVXFileResult) {
+        public AppendCSVXFileResponse(ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class AppendCSVXFileResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AppendCSVXFileResult;
+        
+        public AppendCSVXFileResponseBody() {
+        }
+        
+        public AppendCSVXFileResponseBody(bool AppendCSVXFileResult) {
             this.AppendCSVXFileResult = AppendCSVXFileResult;
         }
     }
@@ -759,24 +984,44 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeployOnDemandJob", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeployOnDemandJobRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobTicket;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=1)]
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeployOnDemandJob", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequestBody Body;
         
         public DeployOnDemandJobRequest() {
         }
         
-        public DeployOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
-            this.XMPUser = XMPUser;
+        public DeployOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class DeployOnDemandJobRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobTicket;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        
+        public DeployOnDemandJobRequestBody() {
+        }
+        
+        public DeployOnDemandJobRequestBody(string inUsername, string inPassword, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobTicket = inJobTicket;
             this.inProps = inProps;
         }
@@ -785,16 +1030,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeployOnDemandJobResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeployOnDemandJobResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string DeployOnDemandJobResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeployOnDemandJobResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponseBody Body;
         
         public DeployOnDemandJobResponse() {
         }
         
-        public DeployOnDemandJobResponse(string DeployOnDemandJobResult) {
+        public DeployOnDemandJobResponse(ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class DeployOnDemandJobResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string DeployOnDemandJobResult;
+        
+        public DeployOnDemandJobResponseBody() {
+        }
+        
+        public DeployOnDemandJobResponseBody(string DeployOnDemandJobResult) {
             this.DeployOnDemandJobResult = DeployOnDemandJobResult;
         }
     }
@@ -802,20 +1064,41 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UndeployOnDemandJob", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UndeployOnDemandJobRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobID;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UndeployOnDemandJob", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequestBody Body;
         
         public UndeployOnDemandJobRequest() {
         }
         
-        public UndeployOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
-            this.XMPUser = XMPUser;
+        public UndeployOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class UndeployOnDemandJobRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobID;
+        
+        public UndeployOnDemandJobRequestBody() {
+        }
+        
+        public UndeployOnDemandJobRequestBody(string inUsername, string inPassword, string inJobID) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobID = inJobID;
         }
     }
@@ -823,16 +1106,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UndeployOnDemandJobResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UndeployOnDemandJobResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public bool UndeployOnDemandJobResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UndeployOnDemandJobResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponseBody Body;
         
         public UndeployOnDemandJobResponse() {
         }
         
-        public UndeployOnDemandJobResponse(bool UndeployOnDemandJobResult) {
+        public UndeployOnDemandJobResponse(ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class UndeployOnDemandJobResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool UndeployOnDemandJobResult;
+        
+        public UndeployOnDemandJobResponseBody() {
+        }
+        
+        public UndeployOnDemandJobResponseBody(bool UndeployOnDemandJobResult) {
             this.UndeployOnDemandJobResult = UndeployOnDemandJobResult;
         }
     }
@@ -840,20 +1140,41 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SuspendOnDemandJob", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SuspendOnDemandJobRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobID;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SuspendOnDemandJob", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequestBody Body;
         
         public SuspendOnDemandJobRequest() {
         }
         
-        public SuspendOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
-            this.XMPUser = XMPUser;
+        public SuspendOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SuspendOnDemandJobRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobID;
+        
+        public SuspendOnDemandJobRequestBody() {
+        }
+        
+        public SuspendOnDemandJobRequestBody(string inUsername, string inPassword, string inJobID) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobID = inJobID;
         }
     }
@@ -861,16 +1182,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SuspendOnDemandJobResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SuspendOnDemandJobResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public bool SuspendOnDemandJobResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SuspendOnDemandJobResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponseBody Body;
         
         public SuspendOnDemandJobResponse() {
         }
         
-        public SuspendOnDemandJobResponse(bool SuspendOnDemandJobResult) {
+        public SuspendOnDemandJobResponse(ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class SuspendOnDemandJobResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool SuspendOnDemandJobResult;
+        
+        public SuspendOnDemandJobResponseBody() {
+        }
+        
+        public SuspendOnDemandJobResponseBody(bool SuspendOnDemandJobResult) {
             this.SuspendOnDemandJobResult = SuspendOnDemandJobResult;
         }
     }
@@ -878,20 +1216,41 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ResumeOnDemandJob", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ResumeOnDemandJobRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobID;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ResumeOnDemandJob", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequestBody Body;
         
         public ResumeOnDemandJobRequest() {
         }
         
-        public ResumeOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
-            this.XMPUser = XMPUser;
+        public ResumeOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class ResumeOnDemandJobRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobID;
+        
+        public ResumeOnDemandJobRequestBody() {
+        }
+        
+        public ResumeOnDemandJobRequestBody(string inUsername, string inPassword, string inJobID) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobID = inJobID;
         }
     }
@@ -899,16 +1258,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ResumeOnDemandJobResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ResumeOnDemandJobResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public bool ResumeOnDemandJobResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ResumeOnDemandJobResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponseBody Body;
         
         public ResumeOnDemandJobResponse() {
         }
         
-        public ResumeOnDemandJobResponse(bool ResumeOnDemandJobResult) {
+        public ResumeOnDemandJobResponse(ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class ResumeOnDemandJobResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ResumeOnDemandJobResult;
+        
+        public ResumeOnDemandJobResponseBody() {
+        }
+        
+        public ResumeOnDemandJobResponseBody(bool ResumeOnDemandJobResult) {
             this.ResumeOnDemandJobResult = ResumeOnDemandJobResult;
         }
     }
@@ -916,23 +1292,44 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RedeployOnDemandJob", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class RedeployOnDemandJobRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inJobID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=1)]
-        public string inJobTicket;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RedeployOnDemandJob", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequestBody Body;
         
         public RedeployOnDemandJobRequest() {
         }
         
-        public RedeployOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID, string inJobTicket) {
-            this.XMPUser = XMPUser;
+        public RedeployOnDemandJobRequest(ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class RedeployOnDemandJobRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inJobID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string inJobTicket;
+        
+        public RedeployOnDemandJobRequestBody() {
+        }
+        
+        public RedeployOnDemandJobRequestBody(string inUsername, string inPassword, string inJobID, string inJobTicket) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inJobID = inJobID;
             this.inJobTicket = inJobTicket;
         }
@@ -941,16 +1338,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RedeployOnDemandJobResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class RedeployOnDemandJobResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public bool RedeployOnDemandJobResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RedeployOnDemandJobResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponseBody Body;
         
         public RedeployOnDemandJobResponse() {
         }
         
-        public RedeployOnDemandJobResponse(bool RedeployOnDemandJobResult) {
+        public RedeployOnDemandJobResponse(ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class RedeployOnDemandJobResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool RedeployOnDemandJobResult;
+        
+        public RedeployOnDemandJobResponseBody() {
+        }
+        
+        public RedeployOnDemandJobResponseBody(bool RedeployOnDemandJobResult) {
             this.RedeployOnDemandJobResult = RedeployOnDemandJobResult;
         }
     }
@@ -958,21 +1372,41 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateOnDemandOutput", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateOnDemandOutputRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateOnDemandOutput", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequestBody Body;
         
         public CreateOnDemandOutputRequest() {
         }
         
-        public CreateOnDemandOutputRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
-            this.XMPUser = XMPUser;
+        public CreateOnDemandOutputRequest(ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class CreateOnDemandOutputRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public ArtFactory.Proofer.XmPie.Production.Property[] inProps;
+        
+        public CreateOnDemandOutputRequestBody() {
+        }
+        
+        public CreateOnDemandOutputRequestBody(string inUsername, string inPassword, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inProps = inProps;
         }
     }
@@ -980,16 +1414,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateOnDemandOutputResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateOnDemandOutputResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string CreateOnDemandOutputResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateOnDemandOutputResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponseBody Body;
         
         public CreateOnDemandOutputResponse() {
         }
         
-        public CreateOnDemandOutputResponse(string CreateOnDemandOutputResult) {
+        public CreateOnDemandOutputResponse(ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class CreateOnDemandOutputResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string CreateOnDemandOutputResult;
+        
+        public CreateOnDemandOutputResponseBody() {
+        }
+        
+        public CreateOnDemandOutputResponseBody(string CreateOnDemandOutputResult) {
             this.CreateOnDemandOutputResult = CreateOnDemandOutputResult;
         }
     }
@@ -997,20 +1448,41 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOnDemandOutput", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetOnDemandOutputRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inRequestID;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOnDemandOutput", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequestBody Body;
         
         public GetOnDemandOutputRequest() {
         }
         
-        public GetOnDemandOutputRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inRequestID) {
-            this.XMPUser = XMPUser;
+        public GetOnDemandOutputRequest(ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class GetOnDemandOutputRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inRequestID;
+        
+        public GetOnDemandOutputRequestBody() {
+        }
+        
+        public GetOnDemandOutputRequestBody(string inUsername, string inPassword, string inRequestID) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inRequestID = inRequestID;
         }
     }
@@ -1018,16 +1490,33 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOnDemandOutputResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetOnDemandOutputResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public ArtFactory.Proofer.XmPie.Production.OnDemandOutputResult GetOnDemandOutputResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOnDemandOutputResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponseBody Body;
         
         public GetOnDemandOutputResponse() {
         }
         
-        public GetOnDemandOutputResponse(ArtFactory.Proofer.XmPie.Production.OnDemandOutputResult GetOnDemandOutputResult) {
+        public GetOnDemandOutputResponse(ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class GetOnDemandOutputResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.OnDemandOutputResult GetOnDemandOutputResult;
+        
+        public GetOnDemandOutputResponseBody() {
+        }
+        
+        public GetOnDemandOutputResponseBody(ArtFactory.Proofer.XmPie.Production.OnDemandOutputResult GetOnDemandOutputResult) {
             this.GetOnDemandOutputResult = GetOnDemandOutputResult;
         }
     }
@@ -1035,20 +1524,41 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteOnDemandOutput", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeleteOnDemandOutputRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="XMPieWSAPI")]
-        public ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public string inRequestID;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteOnDemandOutput", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequestBody Body;
         
         public DeleteOnDemandOutputRequest() {
         }
         
-        public DeleteOnDemandOutputRequest(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inRequestID) {
-            this.XMPUser = XMPUser;
+        public DeleteOnDemandOutputRequest(ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class DeleteOnDemandOutputRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string inUsername;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string inPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string inRequestID;
+        
+        public DeleteOnDemandOutputRequestBody() {
+        }
+        
+        public DeleteOnDemandOutputRequestBody(string inUsername, string inPassword, string inRequestID) {
+            this.inUsername = inUsername;
+            this.inPassword = inPassword;
             this.inRequestID = inRequestID;
         }
     }
@@ -1056,483 +1566,564 @@ namespace ArtFactory.Proofer.XmPie.Production {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteOnDemandOutputResponse", WrapperNamespace="XMPieWSAPI", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeleteOnDemandOutputResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="XMPieWSAPI", Order=0)]
-        public bool DeleteOnDemandOutputResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteOnDemandOutputResponse", Namespace="XMPieWSAPI", Order=0)]
+        public ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponseBody Body;
         
         public DeleteOnDemandOutputResponse() {
         }
         
-        public DeleteOnDemandOutputResponse(bool DeleteOnDemandOutputResult) {
+        public DeleteOnDemandOutputResponse(ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="XMPieWSAPI")]
+    public partial class DeleteOnDemandOutputResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool DeleteOnDemandOutputResult;
+        
+        public DeleteOnDemandOutputResponseBody() {
+        }
+        
+        public DeleteOnDemandOutputResponseBody(bool DeleteOnDemandOutputResult) {
             this.DeleteOnDemandOutputResult = DeleteOnDemandOutputResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ProductionSoapChannel : ArtFactory.Proofer.XmPie.Production.ProductionSoap, System.ServiceModel.IClientChannel {
+    public interface Production_SSPSoapChannel : ArtFactory.Proofer.XmPie.Production.Production_SSPSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ProductionSoapClient : System.ServiceModel.ClientBase<ArtFactory.Proofer.XmPie.Production.ProductionSoap>, ArtFactory.Proofer.XmPie.Production.ProductionSoap {
+    public partial class Production_SSPSoapClient : System.ServiceModel.ClientBase<ArtFactory.Proofer.XmPie.Production.Production_SSPSoap>, ArtFactory.Proofer.XmPie.Production.Production_SSPSoap {
         
-        public ProductionSoapClient() {
+        public Production_SSPSoapClient() {
         }
         
-        public ProductionSoapClient(string endpointConfigurationName) : 
+        public Production_SSPSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ProductionSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public Production_SSPSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ProductionSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public Production_SSPSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ProductionSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public Production_SSPSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.SubmitJobs(ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest request) {
-            return base.Channel.SubmitJobs(request);
-        }
-        
-        public string[] SubmitJobs(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
-            ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inProps = inProps;
-            ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SubmitJobs(inValue);
-            return retVal.SubmitJobsResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.SubmitJobsAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest request) {
-            return base.Channel.SubmitJobsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse> SubmitJobsAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
-            ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inProps = inProps;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SubmitJobsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.SubmitJobResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.SubmitJob(ArtFactory.Proofer.XmPie.Production.SubmitJobRequest request) {
+        ArtFactory.Proofer.XmPie.Production.SubmitJobResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SubmitJob(ArtFactory.Proofer.XmPie.Production.SubmitJobRequest request) {
             return base.Channel.SubmitJob(request);
         }
         
-        public string SubmitJob(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public string SubmitJob(string inUsername, string inPassword, string inJobTicket, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.SubmitJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inPriority = inPriority;
-            inValue.inTouchPointID = inTouchPointID;
-            inValue.inProps = inProps;
-            ArtFactory.Proofer.XmPie.Production.SubmitJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SubmitJob(inValue);
-            return retVal.SubmitJobResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SubmitJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inPriority = inPriority;
+            inValue.Body.inTouchPointID = inTouchPointID;
+            inValue.Body.inProps = inProps;
+            ArtFactory.Proofer.XmPie.Production.SubmitJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SubmitJob(inValue);
+            return retVal.Body.SubmitJobResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.SubmitJobAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SubmitJobAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobRequest request) {
             return base.Channel.SubmitJobAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobResponse> SubmitJobAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobResponse> SubmitJobAsync(string inUsername, string inPassword, string inJobTicket, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.SubmitJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inPriority = inPriority;
-            inValue.inTouchPointID = inTouchPointID;
-            inValue.inProps = inProps;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SubmitJobAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SubmitJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inPriority = inPriority;
+            inValue.Body.inTouchPointID = inTouchPointID;
+            inValue.Body.inProps = inProps;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SubmitJobAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.SubmitSplittedJob(ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest request) {
+        ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SubmitJobs(ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest request) {
+            return base.Channel.SubmitJobs(request);
+        }
+        
+        public ArtFactory.Proofer.XmPie.Production.ArrayOfString SubmitJobs(string inUsername, string inPassword, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+            ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest();
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SubmitJobsRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inProps = inProps;
+            ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SubmitJobs(inValue);
+            return retVal.Body.SubmitJobsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SubmitJobsAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest request) {
+            return base.Channel.SubmitJobsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobsResponse> SubmitJobsAsync(string inUsername, string inPassword, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+            ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitJobsRequest();
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SubmitJobsRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inProps = inProps;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SubmitJobsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SubmitSplittedJob(ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest request) {
             return base.Channel.SubmitSplittedJob(request);
         }
         
-        public string[] SubmitSplittedJob(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public ArtFactory.Proofer.XmPie.Production.ArrayOfString SubmitSplittedJob(string inUsername, string inPassword, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inSplittingType = inSplittingType;
-            inValue.inSplittingInfo = inSplittingInfo;
-            inValue.inPriority = inPriority;
-            inValue.inTouchPointID = inTouchPointID;
-            inValue.inProps = inProps;
-            ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SubmitSplittedJob(inValue);
-            return retVal.SubmitSplittedJobResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inSplittingType = inSplittingType;
+            inValue.Body.inSplittingInfo = inSplittingInfo;
+            inValue.Body.inPriority = inPriority;
+            inValue.Body.inTouchPointID = inTouchPointID;
+            inValue.Body.inProps = inProps;
+            ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SubmitSplittedJob(inValue);
+            return retVal.Body.SubmitSplittedJobResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.SubmitSplittedJobAsync(ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SubmitSplittedJobAsync(ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest request) {
             return base.Channel.SubmitSplittedJobAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse> SubmitSplittedJobAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobResponse> SubmitSplittedJobAsync(string inUsername, string inPassword, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inSplittingType = inSplittingType;
-            inValue.inSplittingInfo = inSplittingInfo;
-            inValue.inPriority = inPriority;
-            inValue.inTouchPointID = inTouchPointID;
-            inValue.inProps = inProps;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SubmitSplittedJobAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SubmitSplittedJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inSplittingType = inSplittingType;
+            inValue.Body.inSplittingInfo = inSplittingInfo;
+            inValue.Body.inPriority = inPriority;
+            inValue.Body.inTouchPointID = inTouchPointID;
+            inValue.Body.inProps = inProps;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SubmitSplittedJobAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.SubmitJobWithParallelProcessing(ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest request) {
+        ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SubmitJobWithParallelProcessing(ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest request) {
             return base.Channel.SubmitJobWithParallelProcessing(request);
         }
         
-        public string SubmitJobWithParallelProcessing(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public string SubmitJobWithParallelProcessing(string inUsername, string inPassword, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inSplittingType = inSplittingType;
-            inValue.inSplittingInfo = inSplittingInfo;
-            inValue.inPriority = inPriority;
-            inValue.inTouchPointID = inTouchPointID;
-            inValue.inProps = inProps;
-            ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SubmitJobWithParallelProcessing(inValue);
-            return retVal.SubmitJobWithParallelProcessingResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inSplittingType = inSplittingType;
+            inValue.Body.inSplittingInfo = inSplittingInfo;
+            inValue.Body.inPriority = inPriority;
+            inValue.Body.inTouchPointID = inTouchPointID;
+            inValue.Body.inProps = inProps;
+            ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SubmitJobWithParallelProcessing(inValue);
+            return retVal.Body.SubmitJobWithParallelProcessingResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.SubmitJobWithParallelProcessingAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SubmitJobWithParallelProcessingAsync(ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest request) {
             return base.Channel.SubmitJobWithParallelProcessingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse> SubmitJobWithParallelProcessingAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingResponse> SubmitJobWithParallelProcessingAsync(string inUsername, string inPassword, string inJobTicket, string inSplittingType, string inSplittingInfo, string inPriority, string inTouchPointID, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest inValue = new ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inSplittingType = inSplittingType;
-            inValue.inSplittingInfo = inSplittingInfo;
-            inValue.inPriority = inPriority;
-            inValue.inTouchPointID = inTouchPointID;
-            inValue.inProps = inProps;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SubmitJobWithParallelProcessingAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SubmitJobWithParallelProcessingRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inSplittingType = inSplittingType;
+            inValue.Body.inSplittingInfo = inSplittingInfo;
+            inValue.Body.inPriority = inPriority;
+            inValue.Body.inTouchPointID = inTouchPointID;
+            inValue.Body.inProps = inProps;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SubmitJobWithParallelProcessingAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.DeployHTMLDocumentJob(ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest request) {
+        ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.DeployHTMLDocumentJob(ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest request) {
             return base.Channel.DeployHTMLDocumentJob(request);
         }
         
-        public string DeployHTMLDocumentJob(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inTouchPointID) {
+        public string DeployHTMLDocumentJob(string inUsername, string inPassword, string inJobTicket, string inTouchPointID) {
             ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inTouchPointID = inTouchPointID;
-            ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).DeployHTMLDocumentJob(inValue);
-            return retVal.DeployHTMLDocumentJobResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inTouchPointID = inTouchPointID;
+            ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).DeployHTMLDocumentJob(inValue);
+            return retVal.Body.DeployHTMLDocumentJobResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.DeployHTMLDocumentJobAsync(ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.DeployHTMLDocumentJobAsync(ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest request) {
             return base.Channel.DeployHTMLDocumentJobAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse> DeployHTMLDocumentJobAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, string inTouchPointID) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobResponse> DeployHTMLDocumentJobAsync(string inUsername, string inPassword, string inJobTicket, string inTouchPointID) {
             ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inTouchPointID = inTouchPointID;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).DeployHTMLDocumentJobAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.DeployHTMLDocumentJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inTouchPointID = inTouchPointID;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).DeployHTMLDocumentJobAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.UnDeployHTMLDocumentJob(ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest request) {
+        ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.UnDeployHTMLDocumentJob(ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest request) {
             return base.Channel.UnDeployHTMLDocumentJob(request);
         }
         
-        public bool UnDeployHTMLDocumentJob(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
+        public bool UnDeployHTMLDocumentJob(string inUsername, string inPassword, string inJobID) {
             ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).UnDeployHTMLDocumentJob(inValue);
-            return retVal.UnDeployHTMLDocumentJobResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).UnDeployHTMLDocumentJob(inValue);
+            return retVal.Body.UnDeployHTMLDocumentJobResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.UnDeployHTMLDocumentJobAsync(ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.UnDeployHTMLDocumentJobAsync(ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest request) {
             return base.Channel.UnDeployHTMLDocumentJobAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse> UnDeployHTMLDocumentJobAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobResponse> UnDeployHTMLDocumentJobAsync(string inUsername, string inPassword, string inJobID) {
             ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).UnDeployHTMLDocumentJobAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.UnDeployHTMLDocumentJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).UnDeployHTMLDocumentJobAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.MergeCSVXFiles(ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest request) {
+        ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.MergeCSVXFiles(ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest request) {
             return base.Channel.MergeCSVXFiles(request);
         }
         
-        public bool MergeCSVXFiles(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string[] inCSVXFilePaths, string inOutputCSVXPath) {
+        public bool MergeCSVXFiles(string inUsername, string inPassword, ArtFactory.Proofer.XmPie.Production.ArrayOfString inCSVXFilePaths, string inOutputCSVXPath) {
             ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest inValue = new ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inCSVXFilePaths = inCSVXFilePaths;
-            inValue.inOutputCSVXPath = inOutputCSVXPath;
-            ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).MergeCSVXFiles(inValue);
-            return retVal.MergeCSVXFilesResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inCSVXFilePaths = inCSVXFilePaths;
+            inValue.Body.inOutputCSVXPath = inOutputCSVXPath;
+            ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).MergeCSVXFiles(inValue);
+            return retVal.Body.MergeCSVXFilesResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.MergeCSVXFilesAsync(ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.MergeCSVXFilesAsync(ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest request) {
             return base.Channel.MergeCSVXFilesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse> MergeCSVXFilesAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string[] inCSVXFilePaths, string inOutputCSVXPath) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesResponse> MergeCSVXFilesAsync(string inUsername, string inPassword, ArtFactory.Proofer.XmPie.Production.ArrayOfString inCSVXFilePaths, string inOutputCSVXPath) {
             ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest inValue = new ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inCSVXFilePaths = inCSVXFilePaths;
-            inValue.inOutputCSVXPath = inOutputCSVXPath;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).MergeCSVXFilesAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.MergeCSVXFilesRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inCSVXFilePaths = inCSVXFilePaths;
+            inValue.Body.inOutputCSVXPath = inOutputCSVXPath;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).MergeCSVXFilesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.AppendCSVXFile(ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest request) {
+        ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.AppendCSVXFile(ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest request) {
             return base.Channel.AppendCSVXFile(request);
         }
         
-        public bool AppendCSVXFile(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inMainCSVXFilePath, string inSecondaryCSVXFilePath) {
+        public bool AppendCSVXFile(string inUsername, string inPassword, string inMainCSVXFilePath, string inSecondaryCSVXFilePath) {
             ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest inValue = new ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inMainCSVXFilePath = inMainCSVXFilePath;
-            inValue.inSecondaryCSVXFilePath = inSecondaryCSVXFilePath;
-            ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).AppendCSVXFile(inValue);
-            return retVal.AppendCSVXFileResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inMainCSVXFilePath = inMainCSVXFilePath;
+            inValue.Body.inSecondaryCSVXFilePath = inSecondaryCSVXFilePath;
+            ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).AppendCSVXFile(inValue);
+            return retVal.Body.AppendCSVXFileResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.AppendCSVXFileAsync(ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.AppendCSVXFileAsync(ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest request) {
             return base.Channel.AppendCSVXFileAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse> AppendCSVXFileAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inMainCSVXFilePath, string inSecondaryCSVXFilePath) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.AppendCSVXFileResponse> AppendCSVXFileAsync(string inUsername, string inPassword, string inMainCSVXFilePath, string inSecondaryCSVXFilePath) {
             ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest inValue = new ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inMainCSVXFilePath = inMainCSVXFilePath;
-            inValue.inSecondaryCSVXFilePath = inSecondaryCSVXFilePath;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).AppendCSVXFileAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.AppendCSVXFileRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inMainCSVXFilePath = inMainCSVXFilePath;
+            inValue.Body.inSecondaryCSVXFilePath = inSecondaryCSVXFilePath;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).AppendCSVXFileAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.DeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest request) {
+        ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.DeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest request) {
             return base.Channel.DeployOnDemandJob(request);
         }
         
-        public string DeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public string DeployOnDemandJob(string inUsername, string inPassword, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inProps = inProps;
-            ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).DeployOnDemandJob(inValue);
-            return retVal.DeployOnDemandJobResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inProps = inProps;
+            ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).DeployOnDemandJob(inValue);
+            return retVal.Body.DeployOnDemandJobResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.DeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.DeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest request) {
             return base.Channel.DeployOnDemandJobAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse> DeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobResponse> DeployOnDemandJobAsync(string inUsername, string inPassword, string inJobTicket, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobTicket = inJobTicket;
-            inValue.inProps = inProps;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).DeployOnDemandJobAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.DeployOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobTicket = inJobTicket;
+            inValue.Body.inProps = inProps;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).DeployOnDemandJobAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.UndeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest request) {
+        ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.UndeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest request) {
             return base.Channel.UndeployOnDemandJob(request);
         }
         
-        public bool UndeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
+        public bool UndeployOnDemandJob(string inUsername, string inPassword, string inJobID) {
             ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).UndeployOnDemandJob(inValue);
-            return retVal.UndeployOnDemandJobResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).UndeployOnDemandJob(inValue);
+            return retVal.Body.UndeployOnDemandJobResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.UndeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.UndeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest request) {
             return base.Channel.UndeployOnDemandJobAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse> UndeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobResponse> UndeployOnDemandJobAsync(string inUsername, string inPassword, string inJobID) {
             ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).UndeployOnDemandJobAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.UndeployOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).UndeployOnDemandJobAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.SuspendOnDemandJob(ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest request) {
+        ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SuspendOnDemandJob(ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest request) {
             return base.Channel.SuspendOnDemandJob(request);
         }
         
-        public bool SuspendOnDemandJob(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
+        public bool SuspendOnDemandJob(string inUsername, string inPassword, string inJobID) {
             ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SuspendOnDemandJob(inValue);
-            return retVal.SuspendOnDemandJobResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SuspendOnDemandJob(inValue);
+            return retVal.Body.SuspendOnDemandJobResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.SuspendOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.SuspendOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest request) {
             return base.Channel.SuspendOnDemandJobAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse> SuspendOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobResponse> SuspendOnDemandJobAsync(string inUsername, string inPassword, string inJobID) {
             ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).SuspendOnDemandJobAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.SuspendOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).SuspendOnDemandJobAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.ResumeOnDemandJob(ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest request) {
+        ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.ResumeOnDemandJob(ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest request) {
             return base.Channel.ResumeOnDemandJob(request);
         }
         
-        public bool ResumeOnDemandJob(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
+        public bool ResumeOnDemandJob(string inUsername, string inPassword, string inJobID) {
             ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).ResumeOnDemandJob(inValue);
-            return retVal.ResumeOnDemandJobResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).ResumeOnDemandJob(inValue);
+            return retVal.Body.ResumeOnDemandJobResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.ResumeOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.ResumeOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest request) {
             return base.Channel.ResumeOnDemandJobAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse> ResumeOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobResponse> ResumeOnDemandJobAsync(string inUsername, string inPassword, string inJobID) {
             ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).ResumeOnDemandJobAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.ResumeOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).ResumeOnDemandJobAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.RedeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest request) {
+        ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.RedeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest request) {
             return base.Channel.RedeployOnDemandJob(request);
         }
         
-        public bool RedeployOnDemandJob(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID, string inJobTicket) {
+        public bool RedeployOnDemandJob(string inUsername, string inPassword, string inJobID, string inJobTicket) {
             ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            inValue.inJobTicket = inJobTicket;
-            ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).RedeployOnDemandJob(inValue);
-            return retVal.RedeployOnDemandJobResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            inValue.Body.inJobTicket = inJobTicket;
+            ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).RedeployOnDemandJob(inValue);
+            return retVal.Body.RedeployOnDemandJobResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.RedeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.RedeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest request) {
             return base.Channel.RedeployOnDemandJobAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse> RedeployOnDemandJobAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inJobID, string inJobTicket) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobResponse> RedeployOnDemandJobAsync(string inUsername, string inPassword, string inJobID, string inJobTicket) {
             ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest inValue = new ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inJobID = inJobID;
-            inValue.inJobTicket = inJobTicket;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).RedeployOnDemandJobAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.RedeployOnDemandJobRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inJobID = inJobID;
+            inValue.Body.inJobTicket = inJobTicket;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).RedeployOnDemandJobAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.CreateOnDemandOutput(ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest request) {
+        ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.CreateOnDemandOutput(ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest request) {
             return base.Channel.CreateOnDemandOutput(request);
         }
         
-        public string CreateOnDemandOutput(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public string CreateOnDemandOutput(string inUsername, string inPassword, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest inValue = new ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inProps = inProps;
-            ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).CreateOnDemandOutput(inValue);
-            return retVal.CreateOnDemandOutputResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inProps = inProps;
+            ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).CreateOnDemandOutput(inValue);
+            return retVal.Body.CreateOnDemandOutputResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.CreateOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.CreateOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest request) {
             return base.Channel.CreateOnDemandOutputAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse> CreateOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputResponse> CreateOnDemandOutputAsync(string inUsername, string inPassword, ArtFactory.Proofer.XmPie.Production.Property[] inProps) {
             ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest inValue = new ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inProps = inProps;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).CreateOnDemandOutputAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.CreateOnDemandOutputRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inProps = inProps;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).CreateOnDemandOutputAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.GetOnDemandOutput(ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest request) {
+        ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.GetOnDemandOutput(ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest request) {
             return base.Channel.GetOnDemandOutput(request);
         }
         
-        public ArtFactory.Proofer.XmPie.Production.OnDemandOutputResult GetOnDemandOutput(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inRequestID) {
+        public ArtFactory.Proofer.XmPie.Production.OnDemandOutputResult GetOnDemandOutput(string inUsername, string inPassword, string inRequestID) {
             ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest inValue = new ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inRequestID = inRequestID;
-            ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).GetOnDemandOutput(inValue);
-            return retVal.GetOnDemandOutputResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inRequestID = inRequestID;
+            ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).GetOnDemandOutput(inValue);
+            return retVal.Body.GetOnDemandOutputResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.GetOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.GetOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest request) {
             return base.Channel.GetOnDemandOutputAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse> GetOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inRequestID) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputResponse> GetOnDemandOutputAsync(string inUsername, string inPassword, string inRequestID) {
             ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest inValue = new ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inRequestID = inRequestID;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).GetOnDemandOutputAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.GetOnDemandOutputRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inRequestID = inRequestID;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).GetOnDemandOutputAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse ArtFactory.Proofer.XmPie.Production.ProductionSoap.DeleteOnDemandOutput(ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest request) {
+        ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.DeleteOnDemandOutput(ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest request) {
             return base.Channel.DeleteOnDemandOutput(request);
         }
         
-        public bool DeleteOnDemandOutput(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inRequestID) {
+        public bool DeleteOnDemandOutput(string inUsername, string inPassword, string inRequestID) {
             ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest inValue = new ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inRequestID = inRequestID;
-            ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse retVal = ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).DeleteOnDemandOutput(inValue);
-            return retVal.DeleteOnDemandOutputResult;
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inRequestID = inRequestID;
+            ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse retVal = ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).DeleteOnDemandOutput(inValue);
+            return retVal.Body.DeleteOnDemandOutputResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse> ArtFactory.Proofer.XmPie.Production.ProductionSoap.DeleteOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest request) {
+        System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse> ArtFactory.Proofer.XmPie.Production.Production_SSPSoap.DeleteOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest request) {
             return base.Channel.DeleteOnDemandOutputAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse> DeleteOnDemandOutputAsync(ArtFactory.Proofer.XmPie.Production.XMPUser XMPUser, string inRequestID) {
+        public System.Threading.Tasks.Task<ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputResponse> DeleteOnDemandOutputAsync(string inUsername, string inPassword, string inRequestID) {
             ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest inValue = new ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequest();
-            inValue.XMPUser = XMPUser;
-            inValue.inRequestID = inRequestID;
-            return ((ArtFactory.Proofer.XmPie.Production.ProductionSoap)(this)).DeleteOnDemandOutputAsync(inValue);
+            inValue.Body = new ArtFactory.Proofer.XmPie.Production.DeleteOnDemandOutputRequestBody();
+            inValue.Body.inUsername = inUsername;
+            inValue.Body.inPassword = inPassword;
+            inValue.Body.inRequestID = inRequestID;
+            return ((ArtFactory.Proofer.XmPie.Production.Production_SSPSoap)(this)).DeleteOnDemandOutputAsync(inValue);
         }
     }
 }

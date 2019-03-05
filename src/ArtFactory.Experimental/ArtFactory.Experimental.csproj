@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IProofArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProofArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
