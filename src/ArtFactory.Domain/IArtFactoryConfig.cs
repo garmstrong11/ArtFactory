@@ -16,5 +16,7 @@
     /// The UNC name of the Uproduce server
     /// </summary>
     string UproduceServerUncName { get; }
+
+    string ProofResolution { get; }
   }
 }

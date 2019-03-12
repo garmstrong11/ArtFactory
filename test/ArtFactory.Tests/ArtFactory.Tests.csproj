@@ -64,7 +64,6 @@
   <ItemGroup>
     <Compile Include="OvJobServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XmpiePlanServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -50,16 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dial.cs" />
+    <Compile Include="ArtifactType.cs" />
     <Compile Include="IArtFactoryConfig.cs" />
-    <Compile Include="IPlanService.cs" />
     <Compile Include="IProofParams.cs" />
-    <Compile Include="ITicketService.cs" />
-    <Compile Include="IXmPieUser.cs" />
     <Compile Include="JobStatus.cs" />
     <Compile Include="ProofResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Uplan.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

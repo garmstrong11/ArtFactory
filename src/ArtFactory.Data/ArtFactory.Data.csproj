@@ -51,12 +51,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Queries.resx</DependentUpon>
     </Compile>
-    <Compile Include="XmpiePlanService.cs" />
+    <Compile Include="XmpieDocumentService.cs" />
+    <Compile Include="XmpieDialService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ArtFactory.Domain\ArtFactory.Domain.csproj">
       <Project>{9ebbd636-83f9-4565-91b6-7dbf071f0e94}</Project>
       <Name>ArtFactory.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArtFactory.Proofer.XmPie\ArtFactory.Proofer.XmPie.csproj">
+      <Project>{63fbca4f-fb9b-45c0-8e35-58f47beb0303}</Project>
+      <Name>ArtFactory.Proofer.XmPie</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
