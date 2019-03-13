@@ -61,20 +61,22 @@ namespace ArtFactory.Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT TC.AccountID AS AccountId
-        ///     , TC.campaignID AS CampaignId
-        ///     , TD.documentID AS DocumentId
-        ///     , TP.planID AS PlanId
-        ///     , TP.planName AS PlanName
-        ///FROM XMPie.TBL_DOCUMENT TD
-        ///INNER JOIN XMPie.TBL_CAMPAIGN TC ON TD.campaignID = TC.campaignID
-        ///INNER JOIN XMPie.TBL_PLAN TP ON TC.campaignID = TP.campaignID
-        ///WHERE TD.isDeleted = 0
-        ///      AND TD.documentID = @DocumentId.
+        ///   Looks up a localized string similar to SELECT
+        ///       TA.AccountID AS AccountId,
+        ///       TC.campaignID AS CampaignId,
+        ///       TD.documentID AS DocumentId,
+        ///       TP.planID AS PlanId,
+        ///       TA.accountName AS AccountName,
+        ///       TC.campaignName AS CampaignName,
+        ///       TD.documentName AS DocumentName,
+        ///       TP.planName AS PlanName,
+        ///       TD.documentTypeParams.value(&apos;(/DOCUMENT_TYPE/PAGE_WIDTH)[1]&apos;, &apos;decimal&apos;) AS PageWidth,
+        ///       TD.documentTypeParams.value(&apos;(/DOCUMENT_TYPE/PAGE_HEIGHT)[1]&apos;, &apos;decimal&apos;) AS PageHeight,
+        ///       TD.documentTy [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string GetPlanPath {
+        internal static string GetDocument {
             get {
-                return ResourceManager.GetString("GetPlanPath", resourceCulture);
+                return ResourceManager.GetString("GetDocument", resourceCulture);
             }
         }
     }

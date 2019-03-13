@@ -19,9 +19,9 @@
     /// <summary>
     /// A user with production privileges on uProduce
     /// </summary>
-    private IXmPieUser User { get; }
+    private XmpieUser User { get; }
 
-    public OvJobService(Job_SSPSoap jobSvc, IXmPieUser user)
+    public OvJobService(Job_SSPSoap jobSvc, XmpieUser user)
     {
       JobSvc = jobSvc;
       User = user;

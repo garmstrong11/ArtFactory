@@ -28,7 +28,7 @@
     [Test]
     public void PollForStatus_ThreeCallsBeforeCompletion_Completes()
     {
-      var usr = new BossUser(U, P);
+      var usr = new XmpieUser(U, P);
 
       var svc = A.Fake<Job_SSPSoap>();
       A.CallTo(() => svc.GetStatus(U, P, J))
