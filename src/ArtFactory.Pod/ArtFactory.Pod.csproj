@@ -259,6 +259,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ArtFactory.Data\ArtFactory.Data.csproj">
+      <Project>{5a6f9eb0-fa77-4d9d-bb29-050122135466}</Project>
+      <Name>ArtFactory.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArtFactory.Domain\ArtFactory.Domain.csproj">
+      <Project>{9ebbd636-83f9-4565-91b6-7dbf071f0e94}</Project>
+      <Name>ArtFactory.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ArtFactory.Proofer.XmPie\ArtFactory.Proofer.XmPie.csproj">
       <Project>{63fbca4f-fb9b-45c0-8e35-58f47beb0303}</Project>
       <Name>ArtFactory.Proofer.XmPie</Name>

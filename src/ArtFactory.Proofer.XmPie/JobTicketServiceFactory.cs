@@ -35,7 +35,7 @@
 
       }
 
-      return new OvJobTicketService(TicketSvc, Config, jobId);
+      return new OvJobTicketService(TicketSvc, Config, document);
     }
   }
 }
